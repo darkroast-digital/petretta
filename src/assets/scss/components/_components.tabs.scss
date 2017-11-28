@@ -1,0 +1,158 @@
+.tabs__nav {
+	align-items: flex-start;
+	justify-content: center;
+	display: flex;
+	
+	@include mq(m) {
+		display: none;
+	}
+	
+	li {
+		flex: 1 1 0;
+		height: 200px;
+		cursor: pointer;
+		position: relative;
+		@include transition($t: 100ms);
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 60px;
+			background: linear-gradient(to right, $c-primary, transparent);
+			@include transition($t: 100ms);
+		}
+
+
+		h4 {
+			position: absolute;
+			z-index: 20;
+			bottom: 0;
+			margin-bottom: 0;
+			padding: .5rem;
+			font-size: $h5;
+			color: $c-white;
+			@include transition($t: 100ms);
+		}
+		
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			@include transition($t: 100ms);
+		}
+	}
+
+	.active {
+		height: 210px;
+		@include shadow(heavier);
+	}
+}
+
+.tabs__container {
+	padding: 2rem;
+	
+	.tab__drawer {
+		display: none;
+		cursor: pointer;
+		background: $c-grey-lighter;
+		padding: 1rem 2rem;
+		font-family: $g-font-two;
+		font-weight: bold;
+		@include lock(font-size, 30rem, 75rem, 0.889rem, 1rem);
+		@include transition();
+		margin: 0;
+		
+		&:before {
+			display: none;
+		}
+		
+		&:after {
+			display: none;
+		}
+
+		&.active {
+			background: $c-white;
+		}
+
+		@include mq(m) {
+			display: block;
+		}	
+	}
+}
+
+.tab__content {
+	display: flex;
+
+	> div {
+		width: 40%;
+
+		&:nth-of-type(2) {
+			width: calc(60% - 2rem);
+			margin-left: 2rem;
+		}
+	}
+
+	h2 {
+		line-height: 1;
+		color: $c-primary;
+		text-transform: uppercase;
+
+		span {
+			font-weight: normal;
+			display: block;
+			font-size: $h4;
+		}
+	}
+}
+
+.tab__price {
+	color: $c-grey;
+
+	h2 {
+		color: $c-grey;
+		margin: 0;
+		font-size: $h1 * 1.5;
+	}
+
+	h6 {
+		margin: 0;
+	}
+}
+
+.tab__gallery {
+	display: flex;
+	flex-direction: column;
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		height: 280px;
+		margin-bottom: 1rem;
+
+		li {
+			width: calc(33.3333% - 1rem);
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			height: 100%;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+.tab__floorplan {
+	height: 200px;
+	width: 100%;
+	object-fit: contain;
+}

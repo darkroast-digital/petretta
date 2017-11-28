@@ -1,0 +1,149 @@
+.hero {
+	@include cover();
+	@include hw($h: 100%, $w: 100%);
+	position: relative;
+
+	&-logo {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		left: 0;
+		display: block;
+		padding: 2rem;
+		max-width: 270px;
+
+		@include mq(m) {
+			max-width: 210px;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&-slider {
+		height: 100%;
+		width: 100%;
+		position: relative;
+
+		&__slide1 {
+			background-image: url('../img/slides/slide1.jpg');
+			@include cover();
+		}
+
+		&__slide2 {
+			background-image: url('../img/slides/slide2.jpg');
+			@include cover();
+		}
+
+		&__slide3 {
+			background-image: url('../img/slides/slide3.jpg');
+			@include cover();
+		}
+
+		&__slide4 {
+			background-image: url('../img/slides/slide4.jpg');
+			@include cover();
+		}
+	}
+
+	.slick-list,
+	.slick-track,
+	.slick-slide {
+		height: 100vh !important;
+		width: 100%;
+		position: relative;
+	}
+
+	.slick-dots {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: 2rem;
+
+		li {
+			margin-bottom: .5rem;
+		}
+
+		button {
+			height: 15px;
+			width: 15px;
+			padding: 0;
+			border-radius: 50%;
+			border: solid 1px $c-white;
+			background: transparent;
+		}
+
+		.slick-active {
+
+			button {
+				background: $c-white;
+			}
+		}
+	}
+}
+
+.slide-info {
+	position: absolute;
+	bottom: 2rem;
+	left: 8rem;
+	color: $c-white;
+	outline: none;
+	text-shadow: 0 0 5px rgba($c-black, .6);
+
+	@include mq(m) {
+		bottom: 6rem;
+		left: 6rem;
+
+		h6 {
+			font-size: $h5;
+			line-height: 1;
+		}
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 58%;
+		left: -2rem;
+		height: 60px;
+		width: 3px;
+		background: $c-white;
+		transform: translateY(-50%) rotate(20deg) scaleY(0);
+		@include transition($e: $easeOutCust, $d: 400ms);
+		transform-origin: bottom;
+	}
+
+	h6 {
+		font-size: $h4;
+		margin-bottom: .5rem;
+		opacity: 0;
+		transform: translateY(10px);
+		@include transition($t: 600ms, $e: $easeOutCust, $d: 500ms);
+		transform-origin: bottom;
+	}
+
+	p {
+		font-size: $h6;
+		opacity: 0;
+		transform: translateY(10px);
+		@include transition($t: 600ms, $e: $easeOutCust, $d: 600ms);
+		transform-origin: bottom;
+	}
+}
+
+.slick-active {
+
+	.slide-info {
+
+		h6,
+		p {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		&:before {
+			transform: translateY(-50%) rotate(20deg) scaleY(1);
+		}
+	}
+}

@@ -1,0 +1,92 @@
+///* ========================================================================
+//   #GLOBAL FONTS
+//   ======================================================================== */
+
+  // Globably Scoped Fonts
+
+  @font-face {
+	font-family: 'Mosk';
+	src: url('../fonts/MoskExtra-Bold800.eot');
+	src: url('../fonts/MoskExtra-Bold800.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/MoskExtra-Bold800.woff') format('woff'),
+		url('../fonts/MoskExtra-Bold800.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mosk';
+	src: url('../fonts/MoskNormal400.eot');
+	src: url('../fonts/MoskNormal400.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/MoskNormal400.woff') format('woff'),
+		url('../fonts/MoskNormal400.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mosk';
+	src: url('../fonts/MoskMedium500.eot');
+	src: url('../fonts/MoskMedium500.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/MoskMedium500.woff') format('woff'),
+		url('../fonts/MoskMedium500.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mosk';
+	src: url('../fonts/MoskLight300.eot');
+	src: url('../fonts/MoskLight300.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/MoskLight300.woff') format('woff'),
+		url('../fonts/MoskLight300.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mosk';
+	src: url('../fonts/MoskBold700.eot');
+	src: url('../fonts/MoskBold700.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/MoskBold700.woff') format('woff'),
+		url('../fonts/MoskBold700.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+// Declare Font Variables
+
+$g-font-one: 'Mosk';
+$g-font-two: 'Mosk';
+$g-font-mono: 'Mosk';
+
+// Apply Fonts To Elements
+
+html {
+	font-family: $g-font-two;
+	color: $c-font;
+}
+
+body {
+	font-family: $g-font-two;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $g-font-one;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: $g-font-mono;
+}
+
+a {
+	font-family: $g-font-one;
+}

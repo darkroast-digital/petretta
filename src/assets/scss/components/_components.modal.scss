@@ -1,0 +1,74 @@
+.modal {
+	position: fixed;
+	z-index: 60;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	@include transition();
+
+	&.is--active {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+	}
+
+	&-background {
+		position: absolute;
+		z-index: 0;
+		background: rgba($c-grey-darkest, .8);
+		height: 100%;
+		width: 100%;
+	}
+
+	&-content {
+		position: relative;
+		z-index: 10;
+		background: rgba($c-black, .8);
+		padding: 2rem;
+
+		@include mq(m) {
+			max-width: 80%;
+			left: -10%;
+			height: 100%;
+			padding-top: 5rem;
+		}
+
+		.form-row {
+
+			input,
+			textarea {
+				background: transparent;
+				border-color: $c-white;
+			}
+
+			textarea {
+
+				@include mq(m) {
+					max-height: 50px;
+				}
+			}
+		}
+	}
+
+	button {
+		background: $c-white;
+		border-radius: 0;
+		color: $c-black;
+	}
+}
+
+.modal-close {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	right: 5rem;
+	color: $c-white;
+	font-size: $h5;
+	cursor: pointer; 
+	padding: 2rem;
+}
