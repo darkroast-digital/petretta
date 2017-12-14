@@ -107,38 +107,6 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
         }
         mysqli_free_result($result);
         include "includes/header.php";
-        ?>
-
-
-        <div id="content-main">
-            <h2>Edit Folder</h2>
-            <a id="btnAdd" class="btn btn-primary rFloat " href="folders.php">Back to list</a>
-
-            <div class="clear"></div>
-            <strong><?php echo $msg; ?></strong>
-
-            <form action="edit_folder.php" enctype="multipart/form-data" method="post" name="ff1"
-                  class="form-horizontal inner-form" >
-                <input value="yes" name="edit_file" type="hidden"/>
-                <input value="<?php echo $id; ?>" name="id" type="hidden"/>
-
-                <div class="form-group">
-                    <label for="title" class="col-sm-7 control-label">Folder Name:</label>
-
-                    <div class="col-sm-7">
-                        <input class="form-control" name="name" type="text" placeholder="File Title"
-                               value="<?php echo $name ?>">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-3">
-                        <button type="submit" class="btn btn-primary btn-block">Rename Folder</button>
-                    </div>
-                </div>
-                <br/>
-            </form>
-        </div>
-        </div>
-        <?php include "includes/footer.php";
+        ?> <div id="content-main"><h2>Edit Folder</h2><a id="btnAdd" class="btn btn-primary rFloat" href="folders.php">Back to list</a><div class="clear"></div><strong><?php echo $msg; ?></strong><form action="edit_folder.php" enctype="multipart/form-data" method="post" name="ff1" class="form-horizontal inner-form"><input value="yes" name="edit_file" type="hidden"> <input value="<?php echo $id; ?>" name="id" type="hidden"><div class="form-group"><label for="title" class="col-sm-7 control-label">Folder Name:</label><div class="col-sm-7"><input class="form-control" name="name" type="text" placeholder="File Title" value="<?php echo $name ?>"></div></div><div class="form-group"><div class="col-sm-3"><button type="submit" class="btn btn-primary btn-block">Rename Folder</button></div></div><br></form></div> <?php include "includes/footer.php";
     }
 } ?>

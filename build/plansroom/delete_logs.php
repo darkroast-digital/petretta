@@ -48,42 +48,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
             }
         }
         include "includes/header.php";
-        ?>
-
-        <div id="content-main">
-            <h2>Activity Logs Management</h2>
-            <div class="clear"></div>
-            <strong><?php echo $msg; ?></strong>
-
-            <form  class="form-horizontal inner-form" name="ff1" method="post" enctype="multipart/form-data"
-                  action="">
-                <input value="yes" name="edit_settings" type="hidden"/>
-                <input value="<?php echo $id; ?>" name="id" type="hidden"/>
-
-                <div class="form-group">
-                    <label class="col-sm-7 control-label" for="notify_delete">Are you sure you want to empty activity
-                        logs data?</label>
-                    <label class="checkbox-inline">
-                        <input name="delete" type="radio" value="1"/>
-                        Yes&nbsp;&nbsp;
-                    </label>
-                    <label class="checkbox-inline">
-                        <input name="delete" type="radio" value="2"/>
-                        No
-                    </label>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-6 col-sm-3">
-                        <button class="btn btn-primary btn-block" type="submit">Submit</button>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </form>
-        </div>
-
-        </div>
-        <?php include "includes/footer.php"; ?>
-    <?php } else {
+        ?> <div id="content-main"><h2>Activity Logs Management</h2><div class="clear"></div><strong><?php echo $msg; ?></strong><form class="form-horizontal inner-form" name="ff1" method="post" enctype="multipart/form-data" action=""><input value="yes" name="edit_settings" type="hidden"> <input value="<?php echo $id; ?>" name="id" type="hidden"><div class="form-group"><label class="col-sm-7 control-label" for="notify_delete">Are you sure you want to empty activity logs data?</label><label class="checkbox-inline"><input name="delete" type="radio" value="1"> Yes&nbsp;&nbsp;</label><label class="checkbox-inline"><input name="delete" type="radio" value="2"> No</label></div><div class="form-group"><div class="col-sm-offset-6 col-sm-3"><button class="btn btn-primary btn-block" type="submit">Submit</button></div></div><div class="clear"></div></form></div> <?php include "includes/footer.php"; ?> <?php } else {
         header("Location: main.php");
     }
 } ?>

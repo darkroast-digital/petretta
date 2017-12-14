@@ -158,11 +158,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
         $user_stat .= "<option value='2' " . ($active == "2" ? "selected" : "") . ">Not Active</option>";
         $user_stat .= "<option value='1' " . ($active == "1" ? "selected" : "") . ">Active</option>";
         include "includes/header.php";
-        ?>
-
-
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function () {
+        ?> <script type="text/javascript" charset="utf-8">$(document).ready(function () {
 
                 var oTable = $('#table').dataTable({
                     "bProcessing": true,
@@ -246,13 +242,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
                         }
                     }
                 }
-            }
-        </script>
-
-        <script type="text/javascript" src='js/password_strength_plugin.js'></script>
-        <link rel="stylesheet" type="text/css" href="css/passchecker.css">
-        <script>
-            $(document).ready(function () {
+            }</script><script type="text/javascript" src="js/password_strength_plugin.js"></script><link rel="stylesheet" type="text/css" href="css/passchecker.css"><script>$(document).ready(function () {
                 $(".password_adv").passStrength({
                     shortPass: "top_shortPass",
                     badPass: "top_badPass",
@@ -262,16 +252,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
                     userid: ".user_id_adv",
                     messageloc: 1
                 });
-            });
-        </script>
-
-
-        <link rel="stylesheet" href="includes/viewimage/colorbox.css"/>
-        <script src="includes/viewimage/colorbox.js"></script>
-
-
-        <script>
-            $(document).ready(function () {
+            });</script><link rel="stylesheet" href="includes/viewimage/colorbox.css"><script src="includes/viewimage/colorbox.js"></script><script>$(document).ready(function () {
                 //Examples of how to assign the Colorbox event to elements
                 $("#btnAdd").colorbox({inline: true, width: "735px", scrolling: false, overlayClose: false});
                 $("#chkAllExtension").click(function () {
@@ -319,229 +300,23 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
                 }
                 ff1.password.value = pass;
                 $(".top_testresult").remove();
-            }
-        </script>
-
-
-        <div id="content-main">
-        <div id="msgCont">
-            <?php echo $msg; ?>
-        </div>
-        <!-- <div class="content_block"> -->
-
-        <h2>All Users</h2>
-        <button id="btnAdd" class="btn btn-success rFloat " href="#inline_content">Add New</button>
-        <div class="clear"></div>
-        <div id="dynamic">
-            <table cellpadding="0" cellspacing="0" border="0" class="display" id="table" style="width:100%">
-                <thead>
-                <tr>
-                    <th width="5%">&nbsp;</th>
-                    <th width="10%">Username</th>
-                    <th width="6%">User Type</th>
-                    <th width="10%">Email</th>
-                    <th width="7%">Quota</th>
-                    <th width="7%">File Size</th>
-                    <th width="25%">Extensions</th>
-                    <th width="10%">Upload</th>
-                    <th width="20%">Last Login</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td colspan="9" class="dataTables_empty">Loading data from server</td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>&nbsp;</th>
-                    <th>Username</th>
-                    <th>User Type</th>
-                    <th>Email</th>
-                    <th>Quota</th>
-                    <th>File Size</th>
-                    <th>Extensions</th>
-                    <th>Upload</th>
-                    <th>Last Login</th>
-                </tr>
-                </tfoot>
-            </table>
-        </div>
-        <div class="clear"></div>
-        <button id="btndeleteselected" class="btn btn-danger ">Delete Selected</button>
-        </div><br/><br/>
-
-        </div>
-        </div>
-
-        </div>
-        <div style='display:none'>
-            <div id='inline_content' >
-                <h2>Add New User</h2>
-                <form action="users.php" enctype="multipart/form-data" method="post" name="ff1" class="form-horizontal popup-form">
-                    <input value="yes" name="create_user" type="hidden"/>
-
-                    <div class="form-group">
-                        <label for="username" class="col-sm-4 control-label">Username:</label>
-
-                        <div class="col-sm-8">
-                            <input class="form-control user_id_adv" name="username" type="text" id="username"
-                                   placeholder="Username">
-                        </div>
-                    </div>
-                                        <div class="form-group">
-                        <label for="username" class="col-sm-4 control-label">Password:</label>
-
-                        <div class="col-sm-8">
-                            <input class="form-control password_adv" name="password" type="text" id="password"
-                                   placeholder="Password">
-                        </div>
-<!--                     <span onclick="randomPassword();"  class="updatePass">&nbsp&nbsp<img src="images/icon_refresh.png"/></span>
- -->                    </div>
-                     <div class="clear"></div>
-                    <div class="form-group">
-                        <label for="email" class="col-sm-4 control-label">Email:</label>
-
-                        <div class="col-sm-8">
-                            <input class="form-control" name="email" type="email" id="email" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="active" class="col-sm-4 control-label">Status:</label>
-
-                        <div class="col-sm-8">
-                            <select name="active" id="active" class="form-control">
-                                <option value="">Please Select</option>
-                                <?php echo $user_stat; ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="form-group">
-                        <div class="col-sm-8">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="sendpass" value="1"/>Send password to user upon save
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="form-group permissions-hide">
-                        <label for="email" class="col-sm-4 control-label">Permissions:</label>
-
-                        <div class=" col-sm-12">
-                            <div class="checkbox">
-                                <label><input type="checkbox" name="accesslevel2[]"
-                                              value="t" <?php if (is_array($accesslevel2) && in_array("t",$accesslevel2)) {
+            }</script><div id="content-main"><div id="msgCont"> <?php echo $msg; ?> </div><!-- <div class="content_block"> --><h2>All Users</h2><button id="btnAdd" class="btn btn-success rFloat" href="#inline_content">Add New</button><div class="clear"></div><div id="dynamic"><table cellpadding="0" cellspacing="0" border="0" class="display" id="table" style="width:100%"><thead><tr><th width="5%">&nbsp;</th><th width="10%">Username</th><th width="6%">User Type</th><th width="10%">Email</th><th width="7%">Quota</th><th width="7%">File Size</th><th width="25%">Extensions</th><th width="10%">Upload</th><th width="20%">Last Login</th></tr></thead><tbody><tr><td colspan="9" class="dataTables_empty">Loading data from server</td></tr></tbody><tfoot><tr><th>&nbsp;</th><th>Username</th><th>User Type</th><th>Email</th><th>Quota</th><th>File Size</th><th>Extensions</th><th>Upload</th><th>Last Login</th></tr></tfoot></table></div><div class="clear"></div><button id="btndeleteselected" class="btn btn-danger">Delete Selected</button></div><br><br><div style="display:none"><div id="inline_content"><h2>Add New User</h2><form action="users.php" enctype="multipart/form-data" method="post" name="ff1" class="form-horizontal popup-form"><input value="yes" name="create_user" type="hidden"><div class="form-group"><label for="username" class="col-sm-4 control-label">Username:</label><div class="col-sm-8"><input class="form-control user_id_adv" name="username" type="text" id="username" placeholder="Username"></div></div><div class="form-group"><label for="username" class="col-sm-4 control-label">Password:</label><div class="col-sm-8"><input class="form-control password_adv" name="password" type="text" id="password" placeholder="Password"></div><!--                     <span onclick="randomPassword();"  class="updatePass">&nbsp&nbsp<img src="images/icon_refresh.png"/></span>
+ --></div><div class="clear"></div><div class="form-group"><label for="email" class="col-sm-4 control-label">Email:</label><div class="col-sm-8"><input class="form-control" name="email" type="email" id="email" placeholder="Email"></div></div><div class="form-group"><label for="active" class="col-sm-4 control-label">Status:</label><div class="col-sm-8"><select name="active" id="active" class="form-control"><option value="">Please Select</option> <?php echo $user_stat; ?> </select></div></div><div class="clear"></div><div class="form-group"><div class="col-sm-8"><div class="checkbox"><label><input type="checkbox" name="sendpass" value="1">Send password to user upon save</label></div></div></div><div class="clear"></div><div class="form-group permissions-hide"><label for="email" class="col-sm-4 control-label">Permissions:</label><div class="col-sm-12"><div class="checkbox"><label><input type="checkbox" name="accesslevel2[]" value="t" <?php if (is_array($accesslevel2) && in_array("t",$accesslevel2)) {
                                         echo "checked";
-                                    } ?> />Can view only own files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will see only files uploaded by him/her to assigned directories."></label>
-                            </div>
-                            <div class="checkbox">
-                                <label> <input type="checkbox" name="accesslevel2[]"
-                                               value="g" <?php if (is_array($accesslevel2) && in_array("g",$accesslevel2)) {
+                                    } ?> >Can view only own files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will see only files uploaded by him/her to assigned directories."></label></div><div class="checkbox"><label><input type="checkbox" name="accesslevel2[]" value="g" <?php if (is_array($accesslevel2) && in_array("g",$accesslevel2)) {
                                         echo "checked";
-                                    } ?> /> Can upload files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will be able to upload files in assigned directories"></label>
-                            </div>
-                            <div class="checkbox">
-                                <label> <input type="checkbox" name="accesslevel2[]"
-                                               value="i" <?php if (is_array($accesslevel2) && in_array("i",$accesslevel2)) {
+                                    } ?> > Can upload files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will be able to upload files in assigned directories"></label></div><div class="checkbox"><label><input type="checkbox" name="accesslevel2[]" value="i" <?php if (is_array($accesslevel2) && in_array("i",$accesslevel2)) {
                                         echo "checked";
-                                    } ?> checked/> Can view everyone's files.  <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will see all files in directories he/she is assigned to."></label>
-                            </div>
-                            <div class="checkbox">
-                                <label> <input type="checkbox" name="accesslevel2[]"
-                                               value="h" <?php if (is_array($accesslevel2) && in_array("h",$accesslevel2)) {
+                                    } ?> checked="checked"> Can view everyone's files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will see all files in directories he/she is assigned to."></label></div><div class="checkbox"><label><input type="checkbox" name="accesslevel2[]" value="h" <?php if (is_array($accesslevel2) && in_array("h",$accesslevel2)) {
                                         echo "checked";
-                                    } ?> /> Can delete own files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will be able to delete files which were uploaded by him/her"></label>
-                            </div>
-                            <div class="checkbox">
-                                <label> <input type="checkbox" name="accesslevel2[]"
-                                               value="j" <?php if (is_array($accesslevel2) && in_array("j",$accesslevel2)) {
+                                    } ?> > Can delete own files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will be able to delete files which were uploaded by him/her"></label></div><div class="checkbox"><label><input type="checkbox" name="accesslevel2[]" value="j" <?php if (is_array($accesslevel2) && in_array("j",$accesslevel2)) {
                                         echo "checked";
-                                    } ?> /> Can delete any file. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will be able to delete any files in assigned directories"></label>
-                            </div>
-                            <div class="checkbox">
-                                <label> <input type="checkbox" name="accesslevel2[]"
-                                               value="k" <?php if (is_array($accesslevel2) && in_array("k",$accesslevel2)) {
+                                    } ?> > Can delete any file. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user will be able to delete any files in assigned directories"></label></div><div class="checkbox"><label><input type="checkbox" name="accesslevel2[]" value="k" <?php if (is_array($accesslevel2) && in_array("k",$accesslevel2)) {
                                         echo "checked";
-                                    } ?> /> Can edit own files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user can rename own files"></label>
-                            </div>
-                            <div class="checkbox">
-                                <label> <input type="checkbox" name="accesslevel2[]"
-                                               value="l" <?php if (is_array($accesslevel2) && in_array("l",$accesslevel2)) {
+                                    } ?> > Can edit own files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user can rename own files"></label></div><div class="checkbox"><label><input type="checkbox" name="accesslevel2[]" value="l" <?php if (is_array($accesslevel2) && in_array("l",$accesslevel2)) {
                                         echo "checked";
-                                    } ?> /> Can edit all files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user can rename any file in assigned directories"></label>
-                            </div>
-                            <div class="checkbox">
-                                <label> <input type="checkbox" name="accesslevel2[]"
-                                               value="m" <?php if (is_array($accesslevel2) && in_array("m",$accesslevel2)) {
+                                    } ?> > Can edit all files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, user can rename any file in assigned directories"></label></div><div class="checkbox"><label><input type="checkbox" name="accesslevel2[]" value="m" <?php if (is_array($accesslevel2) && in_array("m",$accesslevel2)) {
                                         echo "checked";
-                                    } ?> /> Can share any files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, sharing files will be enabled for this user"></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group permissions-hide">
-                        <label for="email" class="col-sm-4 control-label">Extensions:
-                            <div class="subLabel">
-                                <a href="javascript:;" onclick="javascript:chkExtensions('ff1', true);">check all</a>
-                                | <a href="javascript:;" onclick="javascript:chkExtensions('ff1', false);">uncheck all</a>
-                            </div>
-                        </label>
-
-                        <div class="col-sm-12">
-                            <?php echo $extStr; ?>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="form-group permissions-hide">
-                        <label for="quota" class="col-sm-4 control-label">Disk Size Quota:</label>
-
-                        <div class="col-sm-3">
-                            <input class="form-control" name="quota" type="text" id="quota" placeholder="MB"
-                                   value="<?php echo $quota ?>"/>
-                        </div>
-                        <div class="icon-info">MB
-                            <img src="images/info.png" height="18" width="18" class="tipTip" title="Maximum allocated storage space for this user."></div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="clear"></div>
-                    <div class="form-group permissions-hide">
-                        <label for="quota" class="col-sm-4 control-label">Maximum File Size:</label>
-
-                        <div class="col-sm-3">
-                            <input class="form-control" name="filesize" type="text" id="filesize" placeholder="MB"
-                                   value="<?php echo $filesize ?>"/>
-                        </div>
-                        <div class="icon-info">MB
-                            <img src="images/info.png" height="18" width="18" class="tipTip" title="Maximum file size per each file uploaded."></div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="form-group folder">
-                        <label for="email" class="col-sm-4 control-label">Directories:
-                            <div class="subLabel">
-                                <a href="javascript:;" onclick="javascript:chkFolders( true);">check all</a>
-                                | <a href="javascript:;" onclick="javascript:chkFolders( false);">uncheck all</a>
-                            </div>
-                        </label>
-
-                        <div class="col-sm-8">
-
-                            <?php getFoldersCheckForUser();?>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="form-group popup-form" >
-                        <div class="col-sm-3">
-                            <button type="submit" class="btn btn-primary btn-block">Save</button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-danger btn-block" name="admin" type="submit">Set As admin</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <?php include "includes/footer.php";
+                                    } ?> > Can share any files. <img src="images/info.png" height="18" width="18" class="tipTip" title="If selected, sharing files will be enabled for this user"></label></div></div></div><div class="form-group permissions-hide"><label for="email" class="col-sm-4 control-label">Extensions:<div class="subLabel"><a href="javascript:;" onclick="chkExtensions('ff1', true);">check all</a> | <a href="javascript:;" onclick="chkExtensions('ff1', false);">uncheck all</a></div></label><div class="col-sm-12"> <?php echo $extStr; ?> </div></div><div class="clear"></div><div class="form-group permissions-hide"><label for="quota" class="col-sm-4 control-label">Disk Size Quota:</label><div class="col-sm-3"><input class="form-control" name="quota" type="text" id="quota" placeholder="MB" value="<?php echo $quota ?>"></div><div class="icon-info">MB <img src="images/info.png" height="18" width="18" class="tipTip" title="Maximum allocated storage space for this user."></div></div><div class="clear"></div><div class="clear"></div><div class="form-group permissions-hide"><label for="quota" class="col-sm-4 control-label">Maximum File Size:</label><div class="col-sm-3"><input class="form-control" name="filesize" type="text" id="filesize" placeholder="MB" value="<?php echo $filesize ?>"></div><div class="icon-info">MB <img src="images/info.png" height="18" width="18" class="tipTip" title="Maximum file size per each file uploaded."></div></div><div class="clear"></div><div class="form-group folder"><label for="email" class="col-sm-4 control-label">Directories:<div class="subLabel"><a href="javascript:;" onclick="chkFolders( true);">check all</a> | <a href="javascript:;" onclick="chkFolders( false);">uncheck all</a></div></label><div class="col-sm-8"> <?php getFoldersCheckForUser();?> </div></div><div class="clear"></div><div class="form-group popup-form"><div class="col-sm-3"><button type="submit" class="btn btn-primary btn-block">Save</button></div><div class="col-sm-4"><button class="btn btn-danger btn-block" name="admin" type="submit">Set As admin</button></div></div></form></div></div> <?php include "includes/footer.php";
     }
 }?>

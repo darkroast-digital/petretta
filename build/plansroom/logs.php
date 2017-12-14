@@ -100,9 +100,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
             $logs_table .= "<tr><td colspan=\"7\">0 logs found in database</td></tr>";
         }
         include "includes/header.php";
-        ?>
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function () {
+        ?> <script type="text/javascript" charset="utf-8">$(document).ready(function () {
 //////////
                 var oTable = $('#table').dataTable({
                     "bProcessing": true,
@@ -117,42 +115,6 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
 
                 });
 /////////////////
-            });
-        </script>
-        <div id="content-main">
-            <h2>Activity Logs</h2>
-            <div id="dynamic">
-                <table cellpadding="0" cellspacing="0" border="0" class="display" id="table">
-                    <thead>
-                    <tr>
-                        <th width="20%">Username</th>
-                        <th width="30%">Date/Time</th>
-                        <th width="50%">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="5" class="dataTables_empty">Loading data from server</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>Username</th>
-                        <th>Date/Time</th>
-                        <th>Action</th>
-                    </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div class="spacer"></div>
-            <br/><br/>
-            <a class="btn btn-primary" id="btn-downloadlogs" href="includes/download_csv.php" target="_blank">Download Logs</a>
-            <a class="btn btn-danger" id="btn-deletealllogs" href="delete_logs.php">Delete Logs</a>
-        </div>
-        <div class="clear"></div>
-        <br/><br/>
-        </div>
-        </div>
-        <?php include "includes/footer.php";
+            });</script><div id="content-main"><h2>Activity Logs</h2><div id="dynamic"><table cellpadding="0" cellspacing="0" border="0" class="display" id="table"><thead><tr><th width="20%">Username</th><th width="30%">Date/Time</th><th width="50%">Action</th></tr></thead><tbody><tr><td colspan="5" class="dataTables_empty">Loading data from server</td></tr></tbody><tfoot><tr><th>Username</th><th>Date/Time</th><th>Action</th></tr></tfoot></table></div><div class="spacer"></div><br><br><a class="btn btn-primary" id="btn-downloadlogs" href="includes/download_csv.php" target="_blank">Download Logs</a> <a class="btn btn-danger" id="btn-deletealllogs" href="delete_logs.php">Delete Logs</a></div><div class="clear"></div><br><br> <?php include "includes/footer.php";
     }
 } ?>

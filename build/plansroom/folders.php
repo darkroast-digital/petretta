@@ -146,10 +146,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
         }
         $foldersList = getFoldersList();
         include "includes/header.php";
-        ?>
-
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function () {
+        ?> <script type="text/javascript" charset="utf-8">$(document).ready(function () {
 //////////
                 var oTable = $('#table').dataTable({
 
@@ -213,100 +210,6 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
                     $(this).removeAttr("checked");
                     $(this).parent().removeClass("active");
                 })
-            });
-        </script>
-
-        <div id="content-main">
-            <div id="msgCont">
-                <?php echo $msg; ?>
-            </div>
-            <h2>Manage Folders</h2>
-            <button id="btnAdd" class="btn btn-success rFloat " href="#inline_content">Add New</button>
-            <div class="clear"></div>
-            <div id="dynamic">
-                <table cellpadding="0" cellspacing="0" border="0" class="display" id="table">
-                    <thead>
-                    <tr>
-                        <th width="5%">&nbsp;</th>
-                        <th width="50%">Name</th>
-                        <th width="40%">Date Created</th>
-                        <th width="5%">&nbsp;</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="4" class="dataTables_empty">Loading data from server</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th width="5%">&nbsp;</th>
-                        <th width="50%">Name</th>
-                        <th width="40%">Date Created</th>
-                        <th width="5%">&nbsp;</th>
-                    </tr>
-                    </tfoot>
-                </table>
-                <br/><br/>
-            </div>
-            <div class="clear"></div>
-            <button id="btndeleteselected" class="btn btn-danger ">Delete Selected</button>
-            <br/><br/><br/><br/>
-        </div>
-        </div>
-        <div style='display:none'>
-            <div id='inline_content'>
-                <h2>Create Folder</h2>
-                <br/><br/>
-
-                <form action="folders.php" enctype="multipart/form-data" method="post" name="ff1"
-                      class="form-horizontal popup-form">
-                    <input value="yes" name="add_folder" type="hidden"/>
-
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">Folder Name:</label>
-
-                        <div class="col-sm-12">
-                            <input class="form-control" name="name" type="text" placeholder="Folder Name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-4 control-label">Parent Folder:</label>
-
-                        <div class="col-sm-12">
-                            <select name="parentID" id="parentID" class="form-control">
-                                <option value="Please Select"> No Parent Folder</option>
-                                <?php foreach($foldersList as $id=>$info){?>
-                                    <option value="<?php echo($id)?>"><?php echo($info['name'])?></option>
-                                    <?php if(isset($info['children'])){?>
-
-                                        <?php foreach($info['children'] as $sid=>$sinfo){?>
-                                            <option value="<?php echo($sid)?>">- <?php echo($sinfo['name'])?></option>
-                                        <?php }?>
-
-                                    <?php } ?>
-                                <?php } ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-4 col-sm-8">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="assign" value="yes"> Assign this new folder to all
-                                    users
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-4 col-sm-4">
-                            <button type="submit" class="btn btn-primary btn-block">Create</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <?php include "includes/footer.php";
+            });</script><div id="content-main"><div id="msgCont"> <?php echo $msg; ?> </div><h2>Manage Folders</h2><button id="btnAdd" class="btn btn-success rFloat" href="#inline_content">Add New</button><div class="clear"></div><div id="dynamic"><table cellpadding="0" cellspacing="0" border="0" class="display" id="table"><thead><tr><th width="5%">&nbsp;</th><th width="50%">Name</th><th width="40%">Date Created</th><th width="5%">&nbsp;</th></tr></thead><tbody><tr><td colspan="4" class="dataTables_empty">Loading data from server</td></tr></tbody><tfoot><tr><th width="5%">&nbsp;</th><th width="50%">Name</th><th width="40%">Date Created</th><th width="5%">&nbsp;</th></tr></tfoot></table><br><br></div><div class="clear"></div><button id="btndeleteselected" class="btn btn-danger">Delete Selected</button><br><br><br><br></div><div style="display:none"><div id="inline_content"><h2>Create Folder</h2><br><br><form action="folders.php" enctype="multipart/form-data" method="post" name="ff1" class="form-horizontal popup-form"><input value="yes" name="add_folder" type="hidden"><div class="form-group"><label for="inputEmail3" class="col-sm-4 control-label">Folder Name:</label><div class="col-sm-12"><input class="form-control" name="name" type="text" placeholder="Folder Name"></div></div><div class="form-group"><label for="inputPassword3" class="col-sm-4 control-label">Parent Folder:</label><div class="col-sm-12"><select name="parentID" id="parentID" class="form-control"><option value="Please Select">No Parent Folder</option> <?php foreach($foldersList as $id=>$info){?> <option value="<?php echo($id)?>"><?php echo($info['name'])?></option> <?php if(isset($info['children'])){?> <?php foreach($info['children'] as $sid=>$sinfo){?> <option value="<?php echo($sid)?>">- <?php echo($sinfo['name'])?></option> <?php }?> <?php } ?> <?php } ?> </select></div></div><div class="form-group"><div class="col-sm-offset-4 col-sm-8"><div class="checkbox"><label><input type="checkbox" name="assign" value="yes"> Assign this new folder to all users</label></div></div></div><div class="form-group"><div class="col-sm-offset-4 col-sm-4"><button type="submit" class="btn btn-primary btn-block">Create</button></div></div></form></div></div> <?php include "includes/footer.php";
     }
 } ?>

@@ -30,7 +30,9 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-connect-php": "^0.0.8",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "postcss-ant": "^1.1.0"

@@ -154,37 +154,5 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
         }
     }
     include "includes/header.php";
-    ?>
-    <div id="content-main">
-        <h2>Your Stats</h2>
-        <div class="clear"></div>
-        <div id="wrapper">
-            <div class="col">
-                <h2>Today</h2>
-                <?php // echo $_SERVER['PHP_SELF']; ?>
-                Total uploaded:
-                <strong><?php echo number_format($total_this_today, 2, ".", ",") . " " . $prefix ?></strong><br/>
-                Total downloaded: <strong><?php echo($totalDownloadToday) ?></strong><br/>
-                Total files uploaded: <strong><?php echo($totalFilesToday) ?></strong><br/>
-            </div>
-            <div class="col">
-                <h2>This Month</h2>
-                Total uploaded:
-                <strong><?php echo number_format($total_this_month, 2, ".", ",") . " " . $prefix2 ?></strong><br/>
-                Total downloaded: <strong><?php echo($totalDownloadMonth) ?></strong><br/>
-                Total files uploaded: <strong><?php echo($totalFilesMonth) ?></strong><br/>
-            </div>
-            <div class="col">
-                <h2>All Time Stats</h2>
-                Total uploaded:
-                <strong><?php echo number_format($total_uploaded, 2, ".", ",") . " " . $prefix1 ?></strong><br/>
-                Total downloaded: <strong><?php echo($totalDownload) ?></strong><br/>
-                Total files uploaded: <strong><?php echo($totalFiles) ?></strong><br/>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    </div>
-    </div>
-    <?php include "includes/footer.php";
+    ?> <div id="content-main"><h2>Your Stats</h2><div class="clear"></div><div id="wrapper"><div class="col"><h2>Today</h2> <?php // echo $_SERVER['PHP_SELF']; ?> Total uploaded: <strong><?php echo number_format($total_this_today, 2, ".", ",") . " " . $prefix ?></strong><br>Total downloaded: <strong><?php echo($totalDownloadToday) ?></strong><br>Total files uploaded: <strong><?php echo($totalFilesToday) ?></strong><br></div><div class="col"><h2>This Month</h2>Total uploaded: <strong><?php echo number_format($total_this_month, 2, ".", ",") . " " . $prefix2 ?></strong><br>Total downloaded: <strong><?php echo($totalDownloadMonth) ?></strong><br>Total files uploaded: <strong><?php echo($totalFilesMonth) ?></strong><br></div><div class="col"><h2>All Time Stats</h2>Total uploaded: <strong><?php echo number_format($total_uploaded, 2, ".", ",") . " " . $prefix1 ?></strong><br>Total downloaded: <strong><?php echo($totalDownload) ?></strong><br>Total files uploaded: <strong><?php echo($totalFiles) ?></strong><br></div><div class="clear"></div></div></div> <?php include "includes/footer.php";
 } ?>

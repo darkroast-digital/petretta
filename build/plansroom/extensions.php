@@ -161,10 +161,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
            }
         }
         include "includes/header.php";
-        ?>
-
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function () {
+        ?> <script type="text/javascript" charset="utf-8">$(document).ready(function () {
 
 //////////
                 var oTable = $('#table').dataTable({
@@ -220,75 +217,6 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
                     $(this).removeAttr("checked");
                     $(this).parent().removeClass("active");
                 })
-            });
-        </script>
-        <div id="content-main">
-            <div id="msgCont">
-                <?php echo $msg; ?>
-            </div>
-
-            <h2>All Extensions</h2>
-            <button id="btnAdd" class='btn btn-success rFloat ' id="btnAdd" href="#inline_content">Add New</button>
-            <div id="dynamic">
-                <table cellpadding="0" cellspacing="0" border="0" class="display" id="table">
-                    <thead>
-                    <tr>
-                        <th width="5%">&nbsp;</th>
-                        <th width="95%">Name</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="2" class="dataTables_empty">Loading data from server</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Name</th>
-                    </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div class="clear"></div>
-            <button id="btndeleteselected" class="btn btn-danger">Delete Selected</button>
-        </div><br/><br/>
-
-        </div>
-        <div style='display:none'>
-            <div id='inline_content'>
-                <h2>Add new extensions</h2>
-                <br/><br/><br/><br/>
-                    <form action="extensions.php" enctype="multipart/form-data" method="post" name="ff1"
-                          class="form-horizontal popup-form" >
-                        <input value="yes" name="add_extension" type="hidden"/>
-
-                        <div class="form-group">
-                            <label for="name" class="col-sm-4 control-label">Extension Name:</label>
-
-                            <div class="col-sm-8">
-                                <input class="form-control" name="name" type="text" placeholder="Extension (example: JPG)">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-4 col-sm-8">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="assign" value="yes">Assign this new extension
-                                        to all users
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-4 col-sm-4">
-                                <button type="submit" class="btn btn-primary btn-block">Create</button>
-                            </div>
-                        </div>
-                    </form>
-
-            </div>
-        </div>
-        <?php include "includes/footer.php";
+            });</script><div id="content-main"><div id="msgCont"> <?php echo $msg; ?> </div><h2>All Extensions</h2><button id="btnAdd" class="btn btn-success rFloat" id="btnAdd" href="#inline_content">Add New</button><div id="dynamic"><table cellpadding="0" cellspacing="0" border="0" class="display" id="table"><thead><tr><th width="5%">&nbsp;</th><th width="95%">Name</th></tr></thead><tbody><tr><td colspan="2" class="dataTables_empty">Loading data from server</td></tr></tbody><tfoot><tr><th>&nbsp;</th><th>Name</th></tr></tfoot></table></div><div class="clear"></div><button id="btndeleteselected" class="btn btn-danger">Delete Selected</button></div><br><br><div style="display:none"><div id="inline_content"><h2>Add new extensions</h2><br><br><br><br><form action="extensions.php" enctype="multipart/form-data" method="post" name="ff1" class="form-horizontal popup-form"><input value="yes" name="add_extension" type="hidden"><div class="form-group"><label for="name" class="col-sm-4 control-label">Extension Name:</label><div class="col-sm-8"><input class="form-control" name="name" type="text" placeholder="Extension (example: JPG)"></div></div><div class="form-group"><div class="col-sm-offset-4 col-sm-8"><div class="checkbox"><label><input type="checkbox" name="assign" value="yes">Assign this new extension to all users</label></div></div></div><div class="form-group"><div class="col-sm-offset-4 col-sm-4"><button type="submit" class="btn btn-primary btn-block">Create</button></div></div></form></div></div> <?php include "includes/footer.php";
     }
 } ?>

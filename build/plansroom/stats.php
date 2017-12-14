@@ -141,49 +141,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
         }
     }
     include "includes/header.php";
-    ?>
-
-    <div id="content-main">
-        <div id="wrapper">
-            <div class="col">
-                <h2>Today</h2>
-                <?php // echo $_SERVER['PHP_SELF']; ?>
-                Total uploaded:
-                <strong><?php echo number_format($total_this_today, 2, ".", ",") . " " . $prefix ?></strong><br/>
-                Total downloaded: <strong><?php echo($totalDownloadToday) ?></strong><br/>
-                Total files uploaded: <strong><?php echo($totalFilesToday) ?></strong><br/>
-                Total new users: <strong><?php echo($userCountToday) ?></strong><br/>
-            </div>
-            <div class="col">
-                <h2>This Month</h2>
-                Total uploaded:
-                <strong><?php echo number_format($total_this_month, 2, ".", ",") . " " . $prefix2 ?></strong><br/>
-                Total downloaded: <strong><?php echo($totalDownloadMonth) ?></strong><br/>
-                Total files uploaded: <strong><?php echo($totalFilesMonth) ?></strong><br/>
-                Total new users: <strong><?php echo($userCountMonth) ?></strong><br/>
-            </div>
-            <div class="col">
-                <h2>All Time Stats</h2>
-                Total uploaded:
-                <strong><?php echo number_format($total_uploaded, 2, ".", ",") . " " . $prefix1 ?></strong><br/>
-                Total downloaded: <strong><?php echo($totalDownload) ?></strong><br/>
-                Total files uploaded: <strong><?php echo($totalFiles) ?></strong><br/>
-                Total new users: <strong><?php echo($userCount) ?></strong><br/>
-                Total assigned storage quota: <strong><?php echo $totalQuota ?> MB</strong><br/>
-            </div>
-            <div class="clear"></div>
-            <br>
-
-            <div class="col">
-                <h3>Today's Top 10</h3>
-                <table class="stat">
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>user</th>
-                        <th>downloads</th>
-                        <th>size</th>
-                    </tr>
-                    <?php
+    ?> <div id="content-main"><div id="wrapper"><div class="col"><h2>Today</h2> <?php // echo $_SERVER['PHP_SELF']; ?> Total uploaded: <strong><?php echo number_format($total_this_today, 2, ".", ",") . " " . $prefix ?></strong><br>Total downloaded: <strong><?php echo($totalDownloadToday) ?></strong><br>Total files uploaded: <strong><?php echo($totalFilesToday) ?></strong><br>Total new users: <strong><?php echo($userCountToday) ?></strong><br></div><div class="col"><h2>This Month</h2>Total uploaded: <strong><?php echo number_format($total_this_month, 2, ".", ",") . " " . $prefix2 ?></strong><br>Total downloaded: <strong><?php echo($totalDownloadMonth) ?></strong><br>Total files uploaded: <strong><?php echo($totalFilesMonth) ?></strong><br>Total new users: <strong><?php echo($userCountMonth) ?></strong><br></div><div class="col"><h2>All Time Stats</h2>Total uploaded: <strong><?php echo number_format($total_uploaded, 2, ".", ",") . " " . $prefix1 ?></strong><br>Total downloaded: <strong><?php echo($totalDownload) ?></strong><br>Total files uploaded: <strong><?php echo($totalFiles) ?></strong><br>Total new users: <strong><?php echo($userCount) ?></strong><br>Total assigned storage quota: <strong><?php echo $totalQuota ?> MB</strong><br></div><div class="clear"></div><br><div class="col"><h3>Today's Top 10</h3><table class="stat"><tr><th>&nbsp;</th><th>user</th><th>downloads</th><th>size</th></tr> <?php
                     $sql = "SELECT d.*,u.username,(SELECT COUNT(id) FROM {$db_pr}downloads WHERE idUser=d.idUser AND date > '" . date("Y-m-d 00:00:00") . "') as total,
                                         (SELECT SUM(size) FROM {$db_pr}downloads WHERE idUser=d.idUser AND date > '" . date("Y-m-d 00:00:00") . "') as sizes FROM {$db_pr}downloads d
                                         INNER JOIN {$db_pr}users u ON u.id=d.idUser
@@ -194,31 +152,10 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
                     if (mysqli_num_rows($res)) {
                         $i = 1;
                         while ($row = mysqli_fetch_assoc($res)) {
-                            ?>
-                            <tr class="<?php echo $i % 2 ? "odd" : "" ?>">
-                                <td><?php echo $i ?></td>
-                                <td><?php echo($row['username']) ?></td>
-                                <td style="text-align: center"><?php echo($row['total']) ?></td>
-                                <td><?php echo(getSizeStr($row['sizes'])) ?></td>
-                            </tr>
-                            <?php $i++;
+                            ?> <tr class="<?php echo $i % 2 ? "odd" : "" ?>"><td><?php echo $i ?></td><td><?php echo($row['username']) ?></td><td style="text-align: center"><?php echo($row['total']) ?></td><td><?php echo(getSizeStr($row['sizes'])) ?></td></tr> <?php $i++;
                         }
                     } else {
-                        ?>
-                        <td colspan="4">No data</td>
-                    <?php } ?>
-                </table>
-            </div>
-            <div class="col">
-                <h3>This Month's Top 10</h3>
-                <table class="stat">
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>user</th>
-                        <th>downloads</th>
-                        <th>size</th>
-                    </tr>
-                    <?php
+                        ?> <td colspan="4">No data</td> <?php } ?> </table></div><div class="col"><h3>This Month's Top 10</h3><table class="stat"><tr><th>&nbsp;</th><th>user</th><th>downloads</th><th>size</th></tr> <?php
                     $sql = "SELECT d.*,u.username,(SELECT COUNT(id) FROM {$db_pr}downloads WHERE idUser=d.idUser AND date>'" . date("Y-m-01 00:00:00") . "') as total,
                                         (SELECT SUM(size) FROM {$db_pr}downloads WHERE idUser=d.idUser AND date>'" . date("Y-m-01 00:00:00") . "') as sizes FROM {$db_pr}downloads d
                                         INNER JOIN {$db_pr}users u ON u.id=d.idUser
@@ -229,31 +166,10 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
                     if (mysqli_num_rows($res)) {
                         $i = 1;
                         while ($row = mysqli_fetch_assoc($res)) {
-                            ?>
-                            <tr class="<?php echo $i % 2 ? "odd" : "" ?>">
-                                <td><?php echo $i ?></td>
-                                <td><?php echo($row['username']) ?></td>
-                                <td style="text-align: center"><?php echo($row['total']) ?></td>
-                                <td><?php echo(getSizeStr($row['sizes'])) ?></td>
-                            </tr>
-                            <?php $i++;
+                            ?> <tr class="<?php echo $i % 2 ? "odd" : "" ?>"><td><?php echo $i ?></td><td><?php echo($row['username']) ?></td><td style="text-align: center"><?php echo($row['total']) ?></td><td><?php echo(getSizeStr($row['sizes'])) ?></td></tr> <?php $i++;
                         }
                     } else {
-                        ?>
-                        <td colspan="4">No data</td>
-                    <?php } ?>
-                </table>
-            </div>
-            <div class="col">
-                <h3>All Time Top 10</h3>
-                <table class="stat">
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>user</th>
-                        <th>downloads</th>
-                        <th>size</th>
-                    </tr>
-                    <?php
+                        ?> <td colspan="4">No data</td> <?php } ?> </table></div><div class="col"><h3>All Time Top 10</h3><table class="stat"><tr><th>&nbsp;</th><th>user</th><th>downloads</th><th>size</th></tr> <?php
                     $sql = "SELECT d.*,u.username,(SELECT COUNT(id) FROM {$db_pr}downloads WHERE idUser=d.idUser) as total,
                                         (SELECT SUM(size) FROM {$db_pr}downloads WHERE idUser=d.idUser) as sizes FROM {$db_pr}downloads d
                                         INNER JOIN {$db_pr}users u ON u.id=d.idUser
@@ -263,58 +179,17 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
                     if (mysqli_num_rows($res)) {
                         $i = 1;
                         while ($row = mysqli_fetch_assoc($res)) {
-                            ?>
-                            <tr class="<?php echo $i % 2 ? "odd" : "" ?>">
-                                <td><?php echo $i ?></td>
-                                <td><?php echo($row['username']) ?></td>
-                                <td style="text-align: center"><?php echo($row['total']) ?></td>
-                                <td><?php echo(getSizeStr($row['sizes'])) ?></td>
-                            </tr>
-                            <?php $i++;
+                            ?> <tr class="<?php echo $i % 2 ? "odd" : "" ?>"><td><?php echo $i ?></td><td><?php echo($row['username']) ?></td><td style="text-align: center"><?php echo($row['total']) ?></td><td><?php echo(getSizeStr($row['sizes'])) ?></td></tr> <?php $i++;
                         }
                     } else {
-                        ?>
-                        <td colspan="4">No data</td>
-                    <?php } ?>
-                </table>
-            </div>
-            <div class="clear"></div>
-            <br>
-
-            <div class="topFiles">
-                <h2>Most Popular Files</h2>
-                <div class="clear"></div>
-                <?php
+                        ?> <td colspan="4">No data</td> <?php } ?> </table></div><div class="clear"></div><br><div class="topFiles"><h2>Most Popular Files</h2><div class="clear"></div> <?php
                 $sql = "SELECT d.*,f.*,(SELECT COUNT(id) FROM  {$db_pr}downloads WHERE idFile=d.idFile) as total FROM {$db_pr}downloads d
                         INNER JOIN {$db_pr}files f ON f.id=d.idFile
                         group BY idFile ORDER BY total DESC LIMIT 10";
                 $res = mysqli_query($mysqli,$sql);
                 if (mysqli_num_rows($res)) {
-                    ?>
-                    <table class="stat">
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>File</th>
-                            <th style="text-align: center">Downloads Count</th>
-                        </tr>
-                        <?php    $i = 1;
+                    ?> <table class="stat"><tr><th>&nbsp;</th><th>File</th><th style="text-align: center">Downloads Count</th></tr> <?php    $i = 1;
                         while ($row = mysqli_fetch_assoc($res)) {
-                            ?>
-                            <tr class="<?php echo ($i % 2) ? "odd" : "" ?>">
-                                <td><?php echo $i ?>.</td>
-                                <td><?php echo($row['title']) ?></td>
-                                <td style="text-align: center"><?php echo($row['total']) ?> Downloads</td>
-                            </tr>
-                            <?php $i++;
-                        } ?>
-                    </table>
-                <?php } else { ?>
-                    <td colspan="3">No data</td>
-                <?php } ?>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    <?php include "includes/footer.php";
+                            ?> <tr class="<?php echo ($i % 2) ? "odd" : "" ?>"><td><?php echo $i ?>.</td><td><?php echo($row['title']) ?></td><td style="text-align: center"><?php echo($row['total']) ?> Downloads</td></tr> <?php $i++;
+                        } ?> </table> <?php } else { ?> <td colspan="3">No data</td> <?php } ?> </div></div></div> <?php include "includes/footer.php";
 } ?>

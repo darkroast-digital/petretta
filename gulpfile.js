@@ -9,6 +9,8 @@ const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const ant = require('postcss-ant');
 const autoprefixer = require('autoprefixer');
+const htmlmin = require('gulp-htmlmin');
+const rename = require('gulp-rename');
 
 var paths = {
 	scss: './src/assets/scss/**/*.scss',
@@ -16,7 +18,12 @@ var paths = {
 	css: './build/assets/css',
 	php: './build/*.php',
 	bundle: './build/assets/js/',
-	js: './build/assets/js/bundle.js'
+	js: './build/assets/js/bundle.js',
+    cssMin: './build/assets/css/*.css',
+    htmlMinMain: ['src/*.php', '!src/mailer.php', '!src/careers-mailer.php'],
+    htmlMinPlansroom: 'src/plansroom/*.php',
+    htmlMinProjects: 'src/projects/*.php',
+    htmlMinSnippets: 'src/snippets/*.php'
 };
 
 gulp.task('scripts', () => {
@@ -29,6 +36,30 @@ gulp.task('scripts', () => {
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest(paths.bundle))
     .pipe(notify({ message: 'Scripts Done', onLast: true }));
+});
+
+gulp.task('htmlMinMain', function(){
+    return gulp.src(paths.htmlMinMain)
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('./build'));
+});
+
+gulp.task('htmlMinPlansroom', function(){
+    return gulp.src(paths.htmlMinPlansroom)
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('./build/plansroom'));
+});
+
+gulp.task('htmlMinProjects', function(){
+    return gulp.src(paths.htmlMinProjects)
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('./build/projects'));
+});
+
+gulp.task('htmlMinSnippets', function(){
+    return gulp.src(paths.htmlMinSnippets)
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('./build/snippets'));
 });
 
 gulp.task('sass', () => {
@@ -47,7 +78,13 @@ gulp.task('sass', () => {
 		}));
 });
 
-gulp.task('serve', ['sass', 'scripts'], () => {
+gulp.task('minifyCss', function(){
+    return gulp.src(paths.cssMin)
+        .pipe(htmlmin({collapseWhitespace: true}, {minifyCss: true}))
+        .pipe(gulp.dest('./build/assets/css'));
+});
+
+gulp.task('serve', ['sass', 'scripts', 'minifyCss', 'htmlMinMain', 'htmlMinProjects', 'htmlMinPlansroom', 'htmlMinSnippets'], () => {
 	
 	
 			browserSync({
@@ -56,6 +93,11 @@ gulp.task('serve', ['sass', 'scripts'], () => {
 		
 		gulp.watch(paths.scss, ['sass']);
 		gulp.watch(paths.es, ['scripts']);
+        gulp.watch(paths.cssMin, ['minifyCss']);
+        gulp.watch(paths.htmlMinMain, ['htmlMinMain']);
+        gulp.watch(paths.htmlMinPlansroom, ['htmlMinPlansroom']);
+        gulp.watch(paths.htmlMinProjects, ['htmlMinProjects']);
+        gulp.watch(paths.htmlMinSnippets, ['htmlMinSnippets']);
 		gulp.watch(paths.php).on('change', reload);
 
 });

@@ -114,10 +114,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
     $user_stat .= "<option value='2' " . ($active == "2" ? "selected" : "") . ">Not Active</option>";
     $user_stat .= "<option value='1' " . ($active == "1" ? "selected" : "") . ">Active</option>";
     include "includes/header.php";
-    ?>
-
-    <script type="text/javascript">
-        function randomPassword() {
+    ?> <script type="text/javascript">function randomPassword() {
             chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             pass = " ";
             for (x = 0; x < 10; x++) {
@@ -126,62 +123,5 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
             }
             ff1.password.value = pass;
             $(".top_testresult").remove();
-        }
-    </script>
-    </head>
-    <div id="content-main">
-        <h2>Edit Profile</h2>
-        <div class="clear"></div>
-       <?php echo $msg; ?>
-        <form action="" enctype="multipart/form-data" method="post" name="ff1" class="form-horizontal inner-form">
-            <input value="yes" name="edit_user" type="hidden"/>
-            <input value="<?php echo $id; ?>" name="id" type="hidden"/>
-
-            <div class="form-group">
-                <label for="username" class="col-sm-4 control-label">Username:</label>
-
-                <div class="col-sm-8">
-                    <input class="form-control user_id_adv" name="username" type="text" id="username"
-                           value="<?php echo $username ?>" placeholder="Username" readonly>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="password" class="col-sm-4 control-label">Password:</label>
-
-                <div class="col-sm-8">
-                    <input class="form-control password_adv" name="password" type="text" id="password"
-                           placeholder="Password">
-                </div>
-                    <span onclick="randomPassword();"  class="updatePass">&nbsp&nbsp<img src="images/icon_refresh.png"/></span>
-            </div>
-            <div class="clear"></div>
-            <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-8">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="sendpass"/>Send password to your email
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-            <div class="form-group">
-                <label for="email" class="col-sm-4 control-label">Email:</label>
-
-                <div class="col-sm-8">
-                    <input class="form-control" name="email" type="email" id="email" placeholder="Email"
-                           value="<?php echo $email ?>">
-                </div>
-            </div>
-            <div class="clear"></div>
-            <div class="form-group inner-form" >
-                <div class="col-sm-offset-4 col-sm-4">
-                    <button type="submit" class="btn btn-primary btn-block">Save</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="clear"></div>
-    </div>
-    <?php include "includes/footer.php";
+        }</script><div id="content-main"><h2>Edit Profile</h2><div class="clear"></div> <?php echo $msg; ?> <form action="" enctype="multipart/form-data" method="post" name="ff1" class="form-horizontal inner-form"><input value="yes" name="edit_user" type="hidden"> <input value="<?php echo $id; ?>" name="id" type="hidden"><div class="form-group"><label for="username" class="col-sm-4 control-label">Username:</label><div class="col-sm-8"><input class="form-control user_id_adv" name="username" type="text" id="username" value="<?php echo $username ?>" placeholder="Username" readonly="readonly"></div></div><div class="form-group"><label for="password" class="col-sm-4 control-label">Password:</label><div class="col-sm-8"><input class="form-control password_adv" name="password" type="text" id="password" placeholder="Password"></div><span onclick="randomPassword();" class="updatePass">&nbsp&nbsp<img src="images/icon_refresh.png"></span></div><div class="clear"></div><div class="form-group"><div class="col-sm-offset-4 col-sm-8"><div class="checkbox"><label><input type="checkbox" name="sendpass">Send password to your email</label></div></div></div><div class="clear"></div><div class="form-group"><label for="email" class="col-sm-4 control-label">Email:</label><div class="col-sm-8"><input class="form-control" name="email" type="email" id="email" placeholder="Email" value="<?php echo $email ?>"></div></div><div class="clear"></div><div class="form-group inner-form"><div class="col-sm-offset-4 col-sm-4"><button type="submit" class="btn btn-primary btn-block">Save</button></div></div></form></div><div class="clear"></div> <?php include "includes/footer.php";
 } ?>

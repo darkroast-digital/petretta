@@ -72,39 +72,5 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
     }
     mysqli_free_result($result);
     include "includes/header.php";
-    ?>
-
-    <div id="content-main">
-        <div class="contentPage">
-            <h2>Select Project</h2>
-            <div class="clear"></div>
-            <div class="clear"></div>
-
-                <form action="upload_step2.php" enctype="multipart/form-data" method="get" name="ff1" class="form-horizontal">
-                <div class="col-sm-5">
-                    <h6 style="margin-left: -15px; margin-top: 0;">Please select project to upload files.</h6>
-
-                    <div class="form-group">
-                        <?php if (!$disable_button) { ?>
-
-
-                        <select name="upload_dir" id="upload_dir" class="form-control">
-                            <?php getFoldersDrop()?>
-                        </select>
-
-                        <?php } ?>
-                    </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="form-group">
-                        <div class="col-sm-5">
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                        </div>
-                    </div>
-                </form>
-
-        </div>
-    </div>
-    </div>
-    <?php include "includes/footer.php";
+    ?> <div id="content-main"><div class="contentPage"><h2>Select Project</h2><div class="clear"></div><div class="clear"></div><form action="upload_step2.php" enctype="multipart/form-data" method="get" name="ff1" class="form-horizontal"><div class="col-sm-5"><h6 style="margin-left: -15px; margin-top: 0;">Please select project to upload files.</h6><div class="form-group"> <?php if (!$disable_button) { ?> <select name="upload_dir" id="upload_dir" class="form-control"> <?php getFoldersDrop()?> </select> <?php } ?> </div></div><div class="clear"></div><div class="form-group"><div class="col-sm-5"><button type="submit" class="btn btn-primary btn-block">Submit</button></div></div></form></div></div> <?php include "includes/footer.php";
 } ?>

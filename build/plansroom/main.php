@@ -102,11 +102,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
         $log_table .= "<tr><td colspan=\"7\">0 files found in database</td></tr>";
     }
     include "includes/header.php";
-    ?>
-    <link href="includes/jplayer/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="includes/jplayer/jquery.jplayer.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        function showAlert(val) {
+    ?> <link href="includes/jplayer/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="includes/jplayer/jquery.jplayer.min.js"></script><script type="text/javascript" charset="utf-8">function showAlert(val) {
             var path = document.getElementById("'" + val + "'").value;
             alert(path);
         }
@@ -130,42 +126,9 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
         }
         function viewDoc(path) {
             $("#docValue").html($.colorbox({href: "https://docs.google.com/viewer?url=" + path + "&embedded=true", className: "inline", iframe: true, width: "100%", height: "100%", maxWidth: '1100px'}));
-        }
-    </script>
-    <div id="content-main">
-        <?php if ($level == "admin") {
+        }</script><div id="content-main"> <?php if ($level == "admin") {
             //IF ADMIN LEVEL ACCESS
-            ?>
-            <h2>10 Latest Files</h2>
-            <table border="0" cellspacing="0" cellpadding="0" class="homeTable">
-                <tr id="tblHeader">
-                    <td>Title</td>
-                    <td>Size</td>
-                    <td>Extension</td>
-                    <td>Uploader</td>
-                    <td>Date Uploaded</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <?php echo $files_table; ?>
-            </table>
-
-            <h2>10 Latest Log Entries</h2>
-
-            <table border="0" cellspacing="0" cellpadding="0" class="homeTable">
-                <tr id="tblHeader">
-                    <td style="width: 20%">Username</td>
-                    <td style="130px">Date/Time</td>
-                    <td>Action</td>
-                </tr>
-                <?php echo $log_table; ?>
-            </table>
-        <?php } else { ?>
-
-            <!-- <h2>Welcome <?php echo $_SESSION["username"] ?></h2> -->
-
-            <div class="clear"></div>
-
-               <?php
+            ?> <h2>10 Latest Files</h2><table border="0" cellspacing="0" cellpadding="0" class="homeTable"><tr id="tblHeader"><td>Title</td><td>Size</td><td>Extension</td><td>Uploader</td><td>Date Uploaded</td><td>&nbsp;</td></tr> <?php echo $files_table; ?> </table><h2>10 Latest Log Entries</h2><table border="0" cellspacing="0" cellpadding="0" class="homeTable"><tr id="tblHeader"><td style="width: 20%">Username</td><td style="130px">Date/Time</td><td>Action</td></tr> <?php echo $log_table; ?> </table> <?php } else { ?> <!-- <h2>Welcome <?php echo $_SESSION["username"] ?></h2> --><div class="clear"></div> <?php
 ######################### DO NOT MODIFY (UNLESS SURE) ########################
 session_start();
 require_once("includes/dbconnect.php"); //Load the settings
@@ -697,11 +660,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
     }
     // ============-----==========----================------------===========--------------
 
-    ?>
-
-    <?php if($level==='user'): ?>
-        <style>
-            [class^=" sorting_"] input {
+    ?> <?php if($level==='user'): ?> <style>[class^=" sorting_"] input {
                 display: none !important;
             }
 /*            #content-main table td,
@@ -711,15 +670,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
             }*/
             a[title="Messages"] {
                 display: none;
-            }
-        </style>
-    <?php endif; ?>
-
-    <link href="includes/jplayer/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="includes/jplayer/jquery.jplayer.min.js"></script>
-
-    <script type="text/javascript" charset="utf-8">
-        $(document).ready(function () {
+            }</style> <?php endif; ?> <link href="includes/jplayer/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="includes/jplayer/jquery.jplayer.min.js"></script><script type="text/javascript" charset="utf-8">$(document).ready(function () {
             $("#btnAdd").colorbox({inline: true, width: "700px", height: "513px"});
             $(".iframe").colorbox({iframe: true, width: "480px", height: "200px"});
             $(".callbacks").colorbox({
@@ -803,68 +754,5 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
         }
         function viewDoc(path) {
             $("#docValue").html($.colorbox({href: "https://docs.google.com/viewer?url=" + path + "&embedded=true", className: "inline", iframe: true, width: "850px", height: "100%", maxWidth: '1100px'}));
-        }
-    </script>
-
-
-        <h2>File Management</h2>
-        <div class="clear"></div>
-        <div id='msg'><?php echo $msg; ?></div>
-
-        <br/>
-
-        <div id="dynamic">
-            <form action="#" id="formTable">
-                <table cellpadding="0" cellspacing="0" border="0" class="display lra" id="table">
-                    <thead>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th width="35%">Title</th>
-                        <th width="10%">Size</th>
-                        <th width="8%">Extension</th>
-                        <th width="10%">Folder</th>
-                        <th width="20%">Date Uploaded</th>
-                        <th width="18%">Link</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="6" class="dataTables_empty">Loading data from server</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Title</th>
-                        <th>Size</th>
-                        <th>Extension</th>
-                        <th>Folder</th>
-                        <th>Date Uploaded</th>
-                        <th>Link</th>
-                    </tr>
-                    </tfoot>
-                </table>
-            </form>
-        </div>
-        <div class="spacer"></div>
-        <br/><br/>
-    <br/><br/>
-
-    <span id="folder"></span>
-
-    <div id="imgValue"></div>
-    <div id="audioValue"></div>
-    <div id="videoValue"></div>
-    <div id="pdfValue"></div>
-    <div id="codeValue"></div>
-    <div id="docValue"></div>
-    </div>
-    <?php } ?>
-
-        <?php } ?>
-    </div>
-    </div>
-    <br>
-    </div>
-    <?php include "includes/footer.php";
+        }</script><h2>File Management</h2><div class="clear"></div><div id="msg"><?php echo $msg; ?></div><br><div id="dynamic"><form action="#" id="formTable"><table cellpadding="0" cellspacing="0" border="0" class="display lra" id="table"><thead><tr><th>&nbsp;</th><th width="35%">Title</th><th width="10%">Size</th><th width="8%">Extension</th><th width="10%">Folder</th><th width="20%">Date Uploaded</th><th width="18%">Link</th></tr></thead><tbody><tr><td colspan="6" class="dataTables_empty">Loading data from server</td></tr></tbody><tfoot><tr><th>&nbsp;</th><th>Title</th><th>Size</th><th>Extension</th><th>Folder</th><th>Date Uploaded</th><th>Link</th></tr></tfoot></table></form></div><div class="spacer"></div><br><br><br><br><span id="folder"></span><div id="imgValue"></div><div id="audioValue"></div><div id="videoValue"></div><div id="pdfValue"></div><div id="codeValue"></div><div id="docValue"></div></div> <?php } ?> <?php } ?> <br> <?php include "includes/footer.php";
 } ?>

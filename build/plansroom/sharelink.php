@@ -68,86 +68,10 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
             }
         }
     include "includes/header.php";
-        ?>
-
-        <div id="content-main">
-            <h2>Share Link</h2>
-            <a id="btnAdd" class="btn btn-primary rFloat " href="files.php">Back to list</a>
-            <div class="clear"></div>
-            <form action="" enctype="multipart/form-data" method="post" name="sendMail"
-                  class="form-horizontal ">
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Selected file:</label>
-                    <div class="col-sm-5">
-                        <p class="form-control-static"><?php echo $fileInfo[0] ?></p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Copy/Paste Link:</label>
-                    <div class="col-sm-5">
-                         <input type="text" value="http://<?php echo $filepath; ?>"  class="form-control" onclick="this.select()">
-                    </div>
-                </div>
-                <?php if($showPublicDirLink){?>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Directory Link:</label>
-                    <div class="col-sm-5">
-                        <input type="text" value="http://<?php echo $publicDirUrl; ?>" class="form-control" onclick="this.select()">
-                    </div>
-                </div>
-                <?php }?>
-            </form>
-
-            <h2>Email Link</h2>
-            <div class="clear"></div>
-            <?php echo $msg ?>
-            <p>You can send an email to your friend using following form.</p>
-
-            <form action="" enctype="multipart/form-data" method="post" name="sendMail" class="form-horizontal ">
-                <input type="hidden" value="yes" name="sendEmail"/>
-
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">From:</label>
-                    <div class="col-sm-5">
-                        <p class="form-control-static"><?php echo $userInfo[1]; ?></p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="sendTo" class="col-sm-4 control-label">To:</label>
-
-                    <div class="col-sm-5">
-                        <input class="form-control" name="sendTo" type="text" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Message:
-                    <div class="subLabel"><small>Shortcodes:<br/><b>[link_to_file]</b> = file link
-                            <?php if($showPublicDirLink){ ?>
-                                <br>
-                                <b>[link_to_folder]</b> = folder link
-                            <?php }?>
-                    </small></div>
-                    </label>
-
-                    <div class="col-sm-5">
-                        <textarea name="msg" rows="8" class="form-control" >Hey, sending you the link to check out:
+        ?> <div id="content-main"><h2>Share Link</h2><a id="btnAdd" class="btn btn-primary rFloat" href="files.php">Back to list</a><div class="clear"></div><form action="" enctype="multipart/form-data" method="post" name="sendMail" class="form-horizontal"><div class="form-group"><label class="col-sm-4 control-label">Selected file:</label><div class="col-sm-5"><p class="form-control-static"><?php echo $fileInfo[0] ?></p></div></div><div class="form-group"><label class="col-sm-4 control-label">Copy/Paste Link:</label><div class="col-sm-5"><input type="text" value="http://<?php echo $filepath; ?>" class="form-control" onclick="this.select()"></div></div> <?php if($showPublicDirLink){?> <div class="form-group"><label class="col-sm-4 control-label">Directory Link:</label><div class="col-sm-5"><input type="text" value="http://<?php echo $publicDirUrl; ?>" class="form-control" onclick="this.select()"></div></div> <?php }?> </form><h2>Email Link</h2><div class="clear"></div> <?php echo $msg ?> <p>You can send an email to your friend using following form.</p><form action="" enctype="multipart/form-data" method="post" name="sendMail" class="form-horizontal"><input type="hidden" value="yes" name="sendEmail"><div class="form-group"><label for="inputEmail3" class="col-sm-4 control-label">From:</label><div class="col-sm-5"><p class="form-control-static"><?php echo $userInfo[1]; ?></p></div></div><div class="form-group"><label for="sendTo" class="col-sm-4 control-label">To:</label><div class="col-sm-5"><input class="form-control" name="sendTo" type="text" placeholder="Email"></div></div><div class="form-group"><label for="inputEmail3" class="col-sm-4 control-label">Message:<div class="subLabel"><small>Shortcodes:<br><b>[link_to_file]</b> = file link <?php if($showPublicDirLink){ ?> <br><b>[link_to_folder]</b> = folder link <?php }?> </small></div></label><div class="col-sm-5"><textarea name="msg" rows="8" class="form-control">Hey, sending you the link to check out:
 [link_to_file]
 
-Kind Regards,
-
-<?php echo $userInfo[0]; ?>
-                        </textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-4 col-sm-3">
-                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        </div>
-        <?php
+Kind Regards, <?php echo $userInfo[0]; ?> </textarea></div></div><div class="form-group"><div class="col-sm-offset-4 col-sm-3"><button type="submit" class="btn btn-primary btn-block">Submit</button></div></div></form></div> <?php
         include "includes/footer.php";
     }
 }?>

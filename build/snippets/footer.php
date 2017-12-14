@@ -1,10 +1,1 @@
-</div>
-</main>
-
-<script src="../assets/js/bundle.js"></script>
-
-</body>
-
-<!-- See You Space Cowboy... -->
-
-</html>
+<script src="../assets/js/bundle.js"></script><!-- See You Space Cowboy... -->

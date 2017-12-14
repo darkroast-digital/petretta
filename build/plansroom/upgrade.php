@@ -81,77 +81,8 @@ $showForm = true;
             }
         }
         include "includes/header_static.php";
-        ?>
-
-        <h1 class="header_install">Advanced File Management 3 - Upgrade</h1>
-        <div id="content">
-
-
-            <div class="content_block">
-                <div class="install_container">
-                    <div class="login">
-                        <strong><?php echo $msg; ?></strong>
-
-                        <?php if ($showForm) { ?>
-                            <form action="" enctype="multipart/form-data" method="post" name="ff1"
-                                  class="form-horizontal inner-form inner-form-upgrade" >
-                                <input type="hidden" name="install" value="yes"/>
-
-                                <p class="alert alert-warning">At the moment, it is possible to upgrade only from v2.0 to new v3.0</p>
-                                <h3>Envato License Verification</h3>
-                                <p>
-                                    Please enter your ITEM PURCHASE CODE (located in the license certificate from Envato. You can login to your codecanyon account and go to downloads,
-                                    you will see green button DOWNLOAD next to our product, click it and select License Certificate (txt or PDF). Once you open that file - you will see item purchase code inside. <a href="http://support.convergine.com/bb-plugins/epcv/key_instructions.jpg" target="_blank">Example instructions</a>.
-                                    Item purchase code looks like this: aa1111c11-111f-1111-b1a1-ce11f1ffa111
-                                </p>
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-5 control-label">Your Envato
-                                        Username:</label>
-
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="username" name="username"
-                                               placeholder="Username" value="<?php if (isset($username)) {
+        ?> <h1 class="header_install">Advanced File Management 3 - Upgrade</h1><div id="content"><div class="content_block"><div class="install_container"><div class="login"><strong><?php echo $msg; ?></strong> <?php if ($showForm) { ?> <form action="" enctype="multipart/form-data" method="post" name="ff1" class="form-horizontal inner-form inner-form-upgrade"><input type="hidden" name="install" value="yes"><p class="alert alert-warning">At the moment, it is possible to upgrade only from v2.0 to new v3.0</p><h3>Envato License Verification</h3><p>Please enter your ITEM PURCHASE CODE (located in the license certificate from Envato. You can login to your codecanyon account and go to downloads, you will see green button DOWNLOAD next to our product, click it and select License Certificate (txt or PDF). Once you open that file - you will see item purchase code inside. <a href="http://support.convergine.com/bb-plugins/epcv/key_instructions.jpg" target="_blank">Example instructions</a>. Item purchase code looks like this: aa1111c11-111f-1111-b1a1-ce11f1ffa111</p><div class="form-group"><label for="inputEmail3" class="col-sm-5 control-label">Your Envato Username:</label><div class="col-sm-5"><input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?php if (isset($username)) {
                                             echo $username;
-                                        } ?>" tabindex="1">
-                                    </div> <div class="icon-info"><img src="images/info.png" height="18" width="18" class="tipTip"
-                                                                       title="YOUR username which you enter when you login to Envato marketplaces."></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-5 control-label">Item Purchase Code:</label>
-
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="license" placeholder="Code"
-                                               name="license" value="<?php if (isset($license)) {
+                                        } ?>" tabindex="1"></div><div class="icon-info"><img src="images/info.png" height="18" width="18" class="tipTip" title="YOUR username which you enter when you login to Envato marketplaces."></div></div><div class="form-group"><label for="inputEmail3" class="col-sm-5 control-label">Item Purchase Code:</label><div class="col-sm-5"><input type="text" class="form-control" id="license" placeholder="Code" name="license" value="<?php if (isset($license)) {
                                             echo $license;
-                                        } ?>" tabindex="2">
-                                    </div> <div class="icon-info"><img src="images/info.png" height="18" width="18" class="tipTip"
-                                                                       title="If you don't have item purchase code - please read instructions above this field."></div>
-                                </div>
-                                <?php if(!isset($db_pr)){?>
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-5 control-label">Database tables prefix:</label>
-
-                                        <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="db__pr" placeholder="Example: afm"
-                                                   name="db__pr" value="" tabindex="3">
-                                        </div>
-                                    </div>
-                                <?php }?>
-                                <div class="clear"></div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-4 col-sm-4">
-                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Upgrade to v3
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        <?php } ?>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-<?php include "includes/footer.php"; ?>
+                                        } ?>" tabindex="2"></div><div class="icon-info"><img src="images/info.png" height="18" width="18" class="tipTip" title="If you don't have item purchase code - please read instructions above this field."></div></div> <?php if(!isset($db_pr)){?> <div class="form-group"><label for="inputEmail3" class="col-sm-5 control-label">Database tables prefix:</label><div class="col-sm-5"><input type="text" class="form-control" id="db__pr" placeholder="Example: afm" name="db__pr" value="" tabindex="3"></div></div> <?php }?> <div class="clear"></div><div class="form-group"><div class="col-sm-offset-4 col-sm-4"><button type="submit" class="btn btn-primary btn-lg btn-block">Upgrade to v3</button></div></div></form> <?php } ?> </div><div class="clear"></div></div></div></div><div class="clear"></div> <?php include "includes/footer.php"; ?>

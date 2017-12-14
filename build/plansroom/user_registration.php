@@ -119,58 +119,8 @@ if ($allow_reg) {
         header("Location: main.php");
     } else {
         include "includes/header_static.php";
-        ?>
-
-        <div class="contentPage">
-            <h1 class="header">Advanced File Management 3</h1>
-
-            <div class="loginForm">
-                <?php if ($msg != '') { ?>
-                    <?php echo $msg; ?>
-                <?php } ?>
-
-                <form class="form-horizontal" role="form" name="ff1" method="post">
-                    <input type="hidden" value="yes" name="register"/>
-
-                    <div class="form-group">
-                        <label for="username" class="sr-only">Username</label>
-
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="username" placeholder="Username" name="username"
-                                   value="<?php echo $username ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="sr-only">Password</label>
-
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" id="password" placeholder="Password"
-                                   name="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="sr-only">Email</label>
-
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="email" placeholder="Email" name="email"
-                                   value="<?php echo $email ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12 text-right">
-                            <a href="index.php">back to login</a>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Create Account</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <?php include "includes/footer.php";
+        ?> <div class="contentPage"><h1 class="header">Advanced File Management 3</h1><div class="loginForm"> <?php if ($msg != '') { ?> <?php echo $msg; ?> <?php } ?> <form class="form-horizontal" role="form" name="ff1" method="post"><input type="hidden" value="yes" name="register"><div class="form-group"><label for="username" class="sr-only">Username</label><div class="col-sm-12"><input type="text" class="form-control" id="username" placeholder="Username" name="username" value="<?php echo $username ?>"></div></div><div class="form-group"><label for="password" class="sr-only">Password</label><div class="col-sm-12"><input type="password" class="form-control" id="password" placeholder="Password" name="password"></div></div><div class="form-group"><label for="email" class="sr-only">Email</label><div class="col-sm-12"><input type="text" class="form-control" id="email" placeholder="Email" name="email" value="<?php echo $email ?>"></div></div><div class="form-group"><div class="col-sm-12 text-right"><a href="index.php">back to login</a></div></div><div class="form-group"><div class="col-sm-12"><button type="submit" class="btn btn-primary btn-lg btn-block">Create Account</button></div></div></form></div> <?php include "includes/footer.php";
     }
 } else {
     header("Location: index.php");
-} ?>
+} ?></div>

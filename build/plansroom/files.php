@@ -530,26 +530,14 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
     }
     // ============-----==========----================------------===========--------------
     include "includes/header.php";
-    ?>
-
-    <?php if($level==='user'): ?>
-        <style>
-            [class^=" sorting_"] input {
+    ?> <?php if($level==='user'): ?> <style>[class^=" sorting_"] input {
                 display: none !important;
             }
             #content-main table td,
             #content-main table tr.odd td,
             #content-main table tr:last-child td {
                 background: #000 !important;
-            }
-        </style>
-    <?php endif; ?>
-
-    <link href="includes/jplayer/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="includes/jplayer/jquery.jplayer.min.js"></script>
-
-    <script type="text/javascript" charset="utf-8">
-        $(document).ready(function () {
+            }</style> <?php endif; ?> <link href="includes/jplayer/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="includes/jplayer/jquery.jplayer.min.js"></script><script type="text/javascript" charset="utf-8">$(document).ready(function () {
             $("#btnAdd").colorbox({inline: true, width: "700px", height: "513px"});
             $(".iframe").colorbox({iframe: true, width: "480px", height: "200px"});
             $(".callbacks").colorbox({
@@ -633,106 +621,5 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
         }
         function viewDoc(path) {
             $("#docValue").html($.colorbox({href: "https://docs.google.com/viewer?url=" + path + "&embedded=true", className: "inline", iframe: true, width: "850px", height: "100%", maxWidth: '1100px'}));
-        }
-    </script>
-
-    <div id="content-main">
-
-        <h2>Files Management</h2>
-        <?php if($level=='admin'): ?>
-        <button id="btnAdd" class='btn btn-primary rFloat' id="btnAdd" href="#inline_content">FTP Sync</button>
-        <?php endif; ?>
-        <div class="clear"></div>
-        <div id='msg'><?php echo $msg; ?></div>
-
-        <br/>
-
-        <div id="dynamic">
-            <form action="#" id="formTable">
-                <table cellpadding="0" cellspacing="0" border="0" class="display lra" id="table">
-                    <thead>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th width="35%">Title</th>
-                        <th width="10%">Size</th>
-                        <th width="8%">Extension</th>
-                        <th width="10%">Folder</th>
-                        <th width="20%">Date Uploaded</th>
-                        <th width="18%">Link</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="6" class="dataTables_empty">Loading data from server</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Title</th>
-                        <th>Size</th>
-                        <th>Extension</th>
-                        <th>Folder</th>
-                        <th>Date Uploaded</th>
-                        <th>Link</th>
-                    </tr>
-                    </tfoot>
-                </table>
-            </form>
-        </div>
-        <div class="spacer"></div>
-        <br/><br/>
-        <?php if($level=='admin'): ?>
-        <button id="btndeleteselected" class="btn btn-danger ">Delete Selected</button>
-        <?php endif; ?>
-    </div>
-    <br/><br/>
-
-    <span id="folder"></span>
-
-    <div id="imgValue"></div>
-    <div id="audioValue"></div>
-    <div id="videoValue"></div>
-    <div id="pdfValue"></div>
-    <div id="codeValue"></div>
-    <div id="docValue"></div>
-    </div>
-    <?php if($level=='admin'){?>
-    <div style="display:none;">
-        <div id='inline_content' >
-            <h2>FTP Files Synchronization</h2>
-
-            <ol class="list">
-                <li> Upload files through your FTP, make sure files are uploaded to one of the file manager folders (below list)
-                </li>
-                <li> When finished uploading files to FTP - select folders where you uploaded files below and click SYNC.
-                </li>
-                <li>It may take couple of minutes to sync files to your file manager, depending on amount of files syncing.
-                </li>
-            </ol>
-
-            <form enctype="multipart/form-data" action="files.php" method="post" name="ff2"
-                  class="form-horizontal popup-form">
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-5 control-label">Select folders to sync:</label>
-
-                    <div class="col-sm-7">
-                        <?php getFoldersCheck()?>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-5 col-sm-5">
-                        <input  type="submit" name="sync" id="create" class="btn btn-primary btn-block" value="Sync"/>
-                    </div>
-                </div>
-            </form>
-
-
-            <div class="clear"></div>
-
-        </div>
-        <div class="clear"></div>
-    </div>
-    <?php }?>
-    <?php include "includes/footer.php";
+        }</script><div id="content-main"><h2>Files Management</h2> <?php if($level=='admin'): ?> <button id="btnAdd" class="btn btn-primary rFloat" id="btnAdd" href="#inline_content">FTP Sync</button> <?php endif; ?> <div class="clear"></div><div id="msg"><?php echo $msg; ?></div><br><div id="dynamic"><form action="#" id="formTable"><table cellpadding="0" cellspacing="0" border="0" class="display lra" id="table"><thead><tr><th>&nbsp;</th><th width="35%">Title</th><th width="10%">Size</th><th width="8%">Extension</th><th width="10%">Folder</th><th width="20%">Date Uploaded</th><th width="18%">Link</th></tr></thead><tbody><tr><td colspan="6" class="dataTables_empty">Loading data from server</td></tr></tbody><tfoot><tr><th>&nbsp;</th><th>Title</th><th>Size</th><th>Extension</th><th>Folder</th><th>Date Uploaded</th><th>Link</th></tr></tfoot></table></form></div><div class="spacer"></div><br><br> <?php if($level=='admin'): ?> <button id="btndeleteselected" class="btn btn-danger">Delete Selected</button> <?php endif; ?> </div><br><br><span id="folder"></span><div id="imgValue"></div><div id="audioValue"></div><div id="videoValue"></div><div id="pdfValue"></div><div id="codeValue"></div><div id="docValue"></div> <?php if($level=='admin'){?> <div style="display:none;"><div id="inline_content"><h2>FTP Files Synchronization</h2><ol class="list"><li>Upload files through your FTP, make sure files are uploaded to one of the file manager folders (below list)</li><li>When finished uploading files to FTP - select folders where you uploaded files below and click SYNC.</li><li>It may take couple of minutes to sync files to your file manager, depending on amount of files syncing.</li></ol><form enctype="multipart/form-data" action="files.php" method="post" name="ff2" class="form-horizontal popup-form"><div class="form-group"><label for="inputEmail3" class="col-sm-5 control-label">Select folders to sync:</label><div class="col-sm-7"> <?php getFoldersCheck()?> </div></div><div class="form-group"><div class="col-sm-offset-5 col-sm-5"><input type="submit" name="sync" id="create" class="btn btn-primary btn-block" value="Sync"></div></div></form><div class="clear"></div></div><div class="clear"></div></div> <?php }?> <?php include "includes/footer.php";
 } ?>

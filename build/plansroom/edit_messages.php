@@ -96,10 +96,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
             }
         }
         include "includes/header.php";
-        ?>
-
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function () {
+        ?> <script type="text/javascript" charset="utf-8">$(document).ready(function () {
 //////////
                 var oTable = $('#table').dataTable({
 
@@ -138,47 +135,6 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
             });
             function confirmDelete() {
                 return confirm("Are you sure to delete selected folder?");
-            }
-        </script>
-        <div id="content-main">
-            <div id="msgCont"></div>
-            <div class="content_block">
-                <h2>File Messages</h2>
-                <div class="clear"></div>
-                <div id="dynamic">
-                    <table cellpadding="0" cellspacing="0" border="0" class="display" id="table">
-                        <thead>
-                        <tr>
-                            <th width="5%">&nbsp;</th>
-                            <th width="15%">Name</th>
-                            <th width="25%">Date Posted</th>
-                            <th width="60%">Message</th>
-                            <th width="5%">&nbsp;</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td colspan="5" class="dataTables_empty">Loading data from server</td>
-                        </tr>
-                        </tbody>
-                        <tfoot>
-                        <tr>
-                            <th width="5%">&nbsp;</th>
-                            <th width="15%">Name</th>
-                            <th width="25%">Date Posted</th>
-                            <th width="60%">Message</th>
-                            <th width="5%">&nbsp;</th>
-                        </tr>
-                        </tfoot>
-                    </table>
-                    <br/><br/>
-                </div>
-                <button id="btndeleteselected" class="btn btn-danger ">Delete Selected</button>
-                <br/><br/><br/><br/>
-                <strong><?php echo $msg; ?></strong>
-            </div>
-        </div>
-        </div>
-        <?php include "includes/footer.php";
+            }</script><div id="content-main"><div id="msgCont"></div><div class="content_block"><h2>File Messages</h2><div class="clear"></div><div id="dynamic"><table cellpadding="0" cellspacing="0" border="0" class="display" id="table"><thead><tr><th width="5%">&nbsp;</th><th width="15%">Name</th><th width="25%">Date Posted</th><th width="60%">Message</th><th width="5%">&nbsp;</th></tr></thead><tbody><tr><td colspan="5" class="dataTables_empty">Loading data from server</td></tr></tbody><tfoot><tr><th width="5%">&nbsp;</th><th width="15%">Name</th><th width="25%">Date Posted</th><th width="60%">Message</th><th width="5%">&nbsp;</th></tr></tfoot></table><br><br></div><button id="btndeleteselected" class="btn btn-danger">Delete Selected</button><br><br><br><br><strong><?php echo $msg; ?></strong></div></div> <?php include "includes/footer.php";
     }
 } ?>

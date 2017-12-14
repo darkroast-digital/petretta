@@ -63,47 +63,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] != true) {
     }
 
 include "includes/header.php";
-    ?>
-    <div id="content-main">
-        <?php echo $msg; ?>
-        <h2>Add Message</h2>
-        <a id="btnAdd" class="btn btn-primary rFloat " href="files.php">Back to list</a>
-
-        <div class="clear"></div>
-        <form action="messages.php?file=<?php echo $file ?>" enctype="multipart/form-data" method="post" name="ff1"
-              class="form-horizontal inner-form" >
-            <input value="yes" name="add_msg" type="hidden"/>
-            <input value="<?php echo $file; ?>" name="id" type="hidden"/>
-            <input value="<?php echo $file; ?>" name="file" type="hidden"/>
-
-            <div class="form-group">
-                <label for="title" class="col-sm-3 control-label">File:</label>
-
-                <div class="col-sm-9">
-
-                    <label class="control-label" style="text-align: left"><?php echo($fileInfo[2])?></label>
-
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="title" class="col-sm-3 control-label">Message:</label>
-
-                <div class="col-sm-9">
-                    <textarea name="text" id="text" class="form-control" rows="3"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-2">
-                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                </div>
-            </div>
-        </form>
-        <h2>File Messages</h2>
-        <div class="clear"></div>
-        <div id="blogComments">
-
-            <?php
+    ?> <div id="content-main"> <?php echo $msg; ?> <h2>Add Message</h2><a id="btnAdd" class="btn btn-primary rFloat" href="files.php">Back to list</a><div class="clear"></div><form action="messages.php?file=<?php echo $file ?>" enctype="multipart/form-data" method="post" name="ff1" class="form-horizontal inner-form"><input value="yes" name="add_msg" type="hidden"> <input value="<?php echo $file; ?>" name="id" type="hidden"> <input value="<?php echo $file; ?>" name="file" type="hidden"><div class="form-group"><label for="title" class="col-sm-3 control-label">File:</label><div class="col-sm-9"><label class="control-label" style="text-align: left"><?php echo($fileInfo[2])?></label></div></div><div class="form-group"><label for="title" class="col-sm-3 control-label">Message:</label><div class="col-sm-9"><textarea name="text" id="text" class="form-control" rows="3"></textarea></div></div><div class="form-group"><div class="col-sm-offset-3 col-sm-2"><button type="submit" class="btn btn-primary btn-block">Submit</button></div></div></form><h2>File Messages</h2><div class="clear"></div><div id="blogComments"> <?php
             $sql = "SELECT * FROM {$db_pr}messages WHERE fileID='" . $file . "' ORDER BY dateCreated ASC";
             $result = mysqli_query($mysqli,$sql) or die("oopsy, error encountered");
             if (mysqli_num_rows($result) > 0) {
@@ -112,24 +72,9 @@ include "includes/header.php";
                     $size     = 100;
                     $grav_url = "http://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode($default) . "&s=" . $size;
                     $mname   = $rr["name"];
-                    ?>
-                    <div class="fmCommentWrap">
-                        <div class="fmGravatar"><img src="<?php echo $grav_url; ?>" alt="avatar" />
-                        </div>
-                        <div class="fmMessage">
-                            <div class="fmMessageHeader"><?php echo $mname ?>
-                                - <?php echo date("F jS H:i", strtotime($rr["dateCreated"])) ?></div>
-                            <div class="fmMessageText"><?php echo nl2br($rr["text"]) ?></div>
-                        </div>
-                    </div>
-
-                <?php
+                    ?> <div class="fmCommentWrap"><div class="fmGravatar"><img src="<?php echo $grav_url; ?>" alt="avatar"></div><div class="fmMessage"><div class="fmMessageHeader"><?php echo $mname ?> - <?php echo date("F jS H:i", strtotime($rr["dateCreated"])) ?></div><div class="fmMessageText"><?php echo nl2br($rr["text"]) ?></div></div></div> <?php
                 }
             } else {
                 echo "0 messages found for this file";
             }
-            ?>
-        </div>
-    </div>
-    </div>
-    <?php include "includes/footer.php"; }// }?>
+            ?> </div></div> <?php include "includes/footer.php"; }// }?>
