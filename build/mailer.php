@@ -32,7 +32,7 @@ if ($response["success"] != false) {
 
         // Set the recipient email address.
         // FIXME: Update this to your desired email address.
-        $recipient = "joshstobbs@gmail.com";
+        $recipient = "info@petcon.net";
 
         // Set the email subject.
         $subject = "New contact from $name";

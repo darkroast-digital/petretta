@@ -45,7 +45,7 @@ $message = $_POST['message'];
 $mail = new PHPMailer;
 
 $mail->setFrom($email, $name);
-$mail->addAddress('joshstobbs@gmail.com');     // Add a recipient
+$mail->addAddress('info@petcon.net');     // Add a recipient
 $mail->addReplyTo($email, $name);
 
 $mail->addAttachment('assets/uploads/'.$file_name);         // Add attachments
