@@ -19,7 +19,7 @@
       <ul>
         <li><a href="/projects/windsor-mold.php"><i class="fa fa-caret-left"></i>Previous Project</a></li>
         <li><span>Wisers</span> Windsor, Ontario</li>
-        <li><a href="/projects/josephs.php">Next Project<i class="fa fa-caret-right"></i></a></li>
+        <li><a href="/projects/paramount.php">Next Project<i class="fa fa-caret-right"></i></a></li>
       </ul>
     </div>
 

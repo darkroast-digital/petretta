@@ -86,6 +86,18 @@
             </figure>
 
             <!-- End Project Item -->
+
+            <figure class="project-item">
+                <a href="/projects/paramount.php">
+                    <img src="../assets/img/projects/29.jpg" draggable="false">
+                    <figcaption>
+                        <h3>Paramount Fine Foods</h3>
+                        <p>Windsor, ON</p>
+                    </figcaption>
+                </a>
+            </figure>
+
+            <!-- End Project Item -->
         </div>
 
         <!-- End Project Gallery -->
