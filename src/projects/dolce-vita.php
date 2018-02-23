@@ -15,7 +15,7 @@
   <section class="single-project">
 
     <div class="single-project-nav">
-      <a href="/project-directory.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Projects</span></a>
+      <a href="/mid-rise-residential.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Mid-Rise Residential</span></a>
       <ul>
         <li><a href="/projects/cash-money.php"><i class="fa fa-caret-left"></i>Previous Project</a></li>
         <li><span>Dolce Vita</span> Windsor, Ontario</li>

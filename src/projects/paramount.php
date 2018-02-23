@@ -15,9 +15,9 @@
     </section>
     <section class="single-project">
         <div class="single-project-nav">
-            <a href="/project-directory.php" class="project-back">
+            <a href="/restaurant.php" class="project-back">
                 <i class="fa fa-caret-left"></i>All
-                <span>Projects</span>
+                <span>Restaurant</span>
             </a>
             <ul>
                 <li>

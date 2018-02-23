@@ -857,11 +857,9 @@ h1 {
             font-size: $h6;
             text-transform: uppercase;
             position: relative;
-            padding-top:2.5rem;
 
             @include mq(m) {
                 max-width: 60%;
-                padding-top:1rem;
             }
 
             i {
@@ -886,7 +884,7 @@ h1 {
 
         ul {
             width: 60%;
-            display: block;
+            display: none;
             justify-content: space-between;
             align-items: center;
             background: rgba($c-black, .9);
@@ -900,13 +898,13 @@ h1 {
 
             @include mq(m) {
                 margin-left: 0;
-                display: block;
+                display: none;
                 margin-top: 1rem;
             }
 
             a {
                 color: $c-white;
-                display: block;
+                display: none;
                 padding: 0 .5rem;
             }
 
@@ -2795,6 +2793,10 @@ h1 {
         cursor: pointer;
         @include transition();
 
+        @include mq(m) {
+            left:.5rem;
+        }
+
         i {
             margin-left: -.25rem;
         }
@@ -2821,6 +2823,10 @@ h1 {
         color: $c-white;
         cursor: pointer;
         @include transition();
+
+        @include mq(m) {
+            right:.5rem;
+        }
 
         i {
             margin-right: -.25rem;

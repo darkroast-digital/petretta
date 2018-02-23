@@ -15,7 +15,7 @@
   <section class="single-project">
 
     <div class="single-project-nav">
-      <a href="/project-directory.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Projects</span></a>
+      <a href="/retail.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Retail</span></a>
       <ul>
         <li><a href="/projects/brews-and-cues.php"><i class="fa fa-caret-left"></i>Previous Project</a></li>
         <li><span>Cash Money</span> Windsor, Ontario</li>

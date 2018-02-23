@@ -15,7 +15,7 @@
   <section class="single-project">
 
     <div class="single-project-nav">
-      <a href="/project-directory.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Projects</span></a>
+      <a href="/corporate.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Corporate</span></a>
       <ul>
         <li><a href="/projects/keg-medicine-hat.php"><i class="fa fa-caret-left"></i>Previous Project</a></li>
         <li><span>TD Bank</span> Windsor, Ontario</li>

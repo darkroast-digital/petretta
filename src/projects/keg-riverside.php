@@ -15,7 +15,7 @@
   <section class="single-project">
 
     <div class="single-project-nav">
-      <a href="/project-directory.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Projects</span></a>
+      <a href="/restaurant.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Restaurant</span></a>
       <ul>
         <li><a href="/projects/drive-logistics.php"><i class="fa fa-caret-left"></i>Previous Project</a></li>
         <li><span>The Keg Steakhouse + Bar Riverside</span> Windsor, Ontario</li>

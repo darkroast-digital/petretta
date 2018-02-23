@@ -15,7 +15,7 @@
   <section class="single-project shoppers-harrow">
 
     <div class="single-project-nav">
-      <a href="/project-directory.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Projects</span></a>
+      <a href="/industrial.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Industrial</span></a>
       <ul>
         <li><a href="/projects/value-village.php"><i class="fa fa-caret-left"></i>Previous Project</a></li>
         <li><span>Valvoline</span> Windsor, Ontario</li>
