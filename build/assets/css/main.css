@@ -1369,7 +1369,8 @@ h1 {
       cursor: pointer; }
       @media only screen and (max-width: 768px) {
         .projects-gallery figure {
-          width: 50%; } }
+          width: 100%;
+          margin-right: 70px; } }
       .projects-gallery figure a {
         display: block;
         height: 100%;
@@ -1819,10 +1820,12 @@ h1 {
       color: #ffffff;
       font-size: 1.25rem;
       text-transform: uppercase;
-      position: relative; }
+      position: relative;
+      padding-top: 2.5rem; }
       @media only screen and (max-width: 768px) {
         .single-project-nav > a {
-          max-width: 60%; } }
+          max-width: 60%;
+          padding-top: 1rem; } }
       .single-project-nav > a i {
         margin-right: 1rem; }
       .single-project-nav > a span {
@@ -1838,7 +1841,7 @@ h1 {
         border: solid 1px #ffffff; }
     .single-project-nav ul {
       width: 60%;
-      display: none;
+      display: block;
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between;
@@ -1862,9 +1865,6 @@ h1 {
         color: #ffffff;
         display: block;
         padding: 0 .5rem; }
-        @media only screen and (max-width: 768px) {
-          .single-project-nav ul a {
-            display: none; } }
       .single-project-nav ul .fa-caret-left {
         margin-right: .5rem; }
       .single-project-nav ul .fa-caret-right {
@@ -1900,7 +1900,8 @@ h1 {
         display: block; } }
   .single-project-image {
     height: 50%;
-    cursor: pointer; }
+    cursor: pointer;
+    padding: .25rem; }
     .single-project-image img {
       height: 100%;
       width: 100%;
