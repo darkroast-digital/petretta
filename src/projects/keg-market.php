@@ -25,7 +25,7 @@
                         <i class="fa fa-caret-left"></i>Previous Project</a>
                 </li>
                 <li>
-                    <span>Paramount</span> Windsor, Ontario</li>
+                    <span>The Keg Steakhouse + Bar</span> Ottawa, Ontario</li>
                 <li>
                     <a href="/projects/josephs.php">Next Project
                         <i class="fa fa-caret-right"></i>
@@ -33,54 +33,51 @@
                 </li>
             </ul>
         </div>
-        <div class="single-project-grid paramount">
+        <div class="single-project-grid keg-market windsor-mold">
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/1.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/1.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/2.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/2.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/3.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/3.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/4.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/4.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/5.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/5.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/6.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/6.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/7.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/7.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/8.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/8.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/9.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/9.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/10.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/10.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/11.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/11.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/12.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/12.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/13.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/13.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/14.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/14.jpg" draggable="false" class="project-image">
             </div>
             <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/15.jpg" draggable="false" class="project-image">
-            </div>
-            <div class="single-project-image">
-                <img src="../assets/img/projects/paramount/16.jpg" draggable="false" class="project-image">
+                <img src="../assets/img/projects/keg-market/15.jpg" draggable="false" class="project-image">
             </div>
         </div>
     </section>

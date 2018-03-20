@@ -98,6 +98,30 @@
             </figure>
 
             <!-- End Project Item -->
+
+            <figure class="project-item">
+                <a href="/projects/keg-market.php">
+                    <img src="../assets/img/projects/30.jpg" draggable="false">
+                    <figcaption>
+                        <h3>The Keg Steakhouse + Bar</h3>
+                        <p>Ottawa, ON</p>
+                    </figcaption>
+                </a>
+            </figure>
+
+            <!-- End Project Item -->
+
+            <figure class="project-item">
+                <a href="/projects/keg-huntmar.php">
+                    <img src="../assets/img/projects/31.jpg" draggable="false">
+                    <figcaption>
+                        <h3>The Keg Steakhouse + Bar</h3>
+                        <p>Ottawa, ON</p>
+                    </figcaption>
+                </a>
+            </figure>
+
+            <!-- End Project Item -->
         </div>
 
         <!-- End Project Gallery -->

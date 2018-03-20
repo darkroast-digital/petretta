@@ -15,7 +15,7 @@
   <section class="single-project">
 
     <div class="single-project-nav">
-      <a href="/restaurant.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Restaurant</span></a>
+      <a href="/restaurant.php" class="project-back"><i class="fa fa-caret-left"></i>All <span>Restaurants</span></a>
       <ul>
         <li><a href="/projects/windsor-mold.php"><i class="fa fa-caret-left"></i>Previous Project</a></li>
         <li><span>Wisers</span> Windsor, Ontario</li>
