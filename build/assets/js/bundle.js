@@ -33,7 +33,7 @@ $(document).ready(function() {
     // accessToken: '6678174.dcb4dc5.22dfed692290436f9737ffcb9938b819',
     resolution: 'standard_resolution',
     limit: 6,
-    template: '<a href="{{link}}" target="_blank" class="post"><span class="user"><img src="https://scontent-yyz1-1.cdninstagram.com/t51.2885-19/s320x320/17587224_574604849403594_6769852869295210496_a.jpg" draggable="false" />Petretta Construction</span><img src="{{image}}" /><i><span class="caption">{{caption}}</span><span class="likes">{{likes}} likes</span></i></a>',
+    template: '<a href="{{link}}" target="_blank" class="post"><span class="user"><img src="https://scontent-yyz1-1.cdninstagram.com/vp/80d42739f1546e6508aca45aa7d693da/5B533F09/t51.2885-19/s150x150/17587224_574604849403594_6769852869295210496_a.jpg" draggable="false" />Petretta Construction</span><img src="{{image}}" /><i><span class="caption">{{caption}}</span><span class="likes">{{likes}} likes</span></i></a>',
   });
 
   userFeed.run();
