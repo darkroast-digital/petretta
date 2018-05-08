@@ -87,6 +87,18 @@
 
             <!-- End Project Item -->
 
+            <figure class="project-item">
+                <a href="/projects/planet-fitness.php">
+                    <img src="../assets/img/projects/32.jpg" draggable="false">
+                    <figcaption>
+                        <h3>Planet Fitness</h3>
+                        <p>Bowmanville, ON</p>
+                    </figcaption>
+                </a>
+            </figure>
+
+            <!-- End Project Item -->
+
         </div>
 
         <!-- End Project Gallery -->
